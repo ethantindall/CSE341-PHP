@@ -1,0 +1,18 @@
+div {
+    font-size: 3rem;
+}
+.d1 {
+    background-color: aqua;
+}
+.d2 {
+    background-color: goldenrod;
+}
+.d3 {
+    background-color: palevioletred;
+}
+.row div:hover {
+    font-weight: bold;
+}
+body {
+    text-align: center;
+}
