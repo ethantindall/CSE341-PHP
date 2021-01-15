@@ -1,5 +1,9 @@
 <?php
 
+echo "hi";
+
+/*
+
 phpinfo();
 
 // Create or access a Session
@@ -43,4 +47,5 @@ switch ($action){
         include 'web/homepage/homepage.php';
         exit;
     }
+    */
 ?>
