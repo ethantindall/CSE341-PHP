@@ -37,9 +37,9 @@ $_SESSION["assignmentList"] = '
 
 switch ($action){
     case 'assignments': 
-        include 'views/assignments.php';
+        include 'homepage/assignments.php';
         exit;
     default:
-        include 'views/homepage.php';
+        include 'homepage/homepage.php';
         exit;
     }

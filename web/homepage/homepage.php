@@ -35,7 +35,7 @@
 
             </div>
 
-            <a href="/homepage/index.php/?action=assignments"><div class="drop-selector sel3"><h3>Visit Assignments</h3>
+            <a href="web/homepage/index.php/?action=assignments"><div class="drop-selector sel3"><h3>Visit Assignments</h3>
                 <img src="image.png" class="arrow arrow3" alt="Arrow">
             </div></a>
 
