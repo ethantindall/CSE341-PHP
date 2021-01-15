@@ -1,6 +1,5 @@
 <?php
 
-phpinfo();
 
 // Create or access a Session
 session_start();
@@ -9,7 +8,15 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     if ($action == NULL){
         $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
  }
-
+ switch ($action){
+    case 'assignments': 
+        include 'web/homepage/assignments.php';
+        exit;
+    default:
+        include 'web/homepage/homepage.php';
+        exit;
+    }
+    
 
 $_SESSION["facts"] = "<ul>
                         <li>A goldfish has a 3 second memory span.</li>
@@ -35,13 +42,5 @@ $_SESSION["assignmentList"] = '
                         <a href="#"><li class="drop-selector"><h3>Week 6</h3></li></a>';
 
 
-switch ($action){
-    case 'assignments': 
-        include 'web/homepage/assignments.php';
-        exit;
-    default:
-        include 'web/homepage/homepage.php';
-        exit;
-    }
-    
+
 ?>
