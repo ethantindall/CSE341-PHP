@@ -43,3 +43,4 @@ switch ($action){
         include 'web/homepage/homepage.php';
         exit;
     }
+?>
