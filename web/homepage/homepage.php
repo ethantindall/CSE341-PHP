@@ -15,13 +15,13 @@
     <div id="resume">
         <div class="col1">
             <h1>Ethan Tindall</h1>
-            <img src="/web/homepage/goodpic.jpg" alt="Image of Ethan">
+            <img src="/homepage/goodpic.jpg" alt="Image of Ethan">
             <h3>About Me</h3>
             <p>I am studying at BYUI Online. My degree is Applied Technology. I am studying Web Frontend, Backend, and Computer Programming. This will be my last semester. (If I manage my time correctly!)</p> 
         </div>
         <div class="col2">
             <div class="drop-selector sel1"><h3>Interests</h3>
-                <img src="homepage/image.png" class="arrow arrow1 closed" alt="Arrow">
+                <img src="/homepage/image.png" class="arrow arrow1 closed" alt="Arrow">
             </div>
             <div class="drop1">
                 <?php echo $_SESSION['about']; ?>
@@ -36,7 +36,7 @@
             </div>
 
             <a href="index.php/?action=assignments"><div class="drop-selector sel3"><h3>Visit Assignments</h3>
-                <img src="web/homepage/image.png" class="arrow arrow3" alt="Arrow">
+                <img src="/homepage/image.png" class="arrow arrow3" alt="Arrow">
             </div></a>
 
 
