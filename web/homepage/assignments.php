@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <style><?php include "main.css" ?></style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="/homepage/main.js"></script>
     <title>CSE341 Assignments Page</title>
 
 </head>
