@@ -17,14 +17,14 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     }
     
 
-$_SESSION["facts"] = "<ul>
+$facts = '<ul>
                         <li>A goldfish has a 3 second memory span.</li>
                         <li>George Washington died before dinosaurs were discovered.</li>
                         <li>The Star Wars cartoons are better than the movies. (FACT)</li>
                         <li>Saint Nicholas punched a dude at the Council of Nicea.</li>
-                    </ul>";
+                    </ul>';
 
-$_SESSION["about"] = "<ul>
+$_SESSION["about"] = '<ul>
                         <li>Running</li>
                         <li>Writing Music</li>
                         <li>Playing Piano</li>
@@ -32,7 +32,7 @@ $_SESSION["about"] = "<ul>
                         <li>Coding</li>
                         <li>Eating Pizza</li>
                         <li>Eating Meat</li>
-                    </ul>";
+                    </ul>';
 
 $_SESSION["assignmentList"] = '
                         <a href="#"><li class="drop-selector"><h3>Week 3</h3></li></a>

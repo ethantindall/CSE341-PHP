@@ -31,7 +31,7 @@
             </div>            
             <div class="drop2">
 
-                <?php echo $_SESSION["facts"]; ?>
+                <?php echo $facts; ?>
 
             </div>
 
