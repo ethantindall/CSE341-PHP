@@ -30,7 +30,6 @@ body {
 }
 .arrow {
     margin-top: 20px;
-    margin-left: 40px;
     height: 25px;
 }
 .arrow3 {
@@ -39,6 +38,7 @@ body {
 .drop-selector {
     display:flex;
     flex-direction: row;
+    justify-content: space-between;
     background-color: #4dfff3;
     padding-left: 10px;
     border: 1px solid #503d3f;
