@@ -24,14 +24,14 @@
                 <img src="image.png" class="arrow arrow1 closed" alt="Arrow">
             </div>
             <div class="drop1">
-                <?php echo $_SESSION["about"]; ?>
+                <?php echo $_SESSION['about']; ?>
             </div>
             <div class="drop-selector sel2"><h3>Random Facts I Know</h3>
                 <img src="image.png" class="arrow arrow2 closed" alt="Arrow">
             </div>            
             <div class="drop2">
 
-                <?php echo $facts; ?>
+                <?php echo $_SESSION['facts']; ?>
 
             </div>
 

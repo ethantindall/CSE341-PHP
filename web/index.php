@@ -17,7 +17,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     }
     
 
-$facts = '<ul>
+$_SESSION['facts'] = '<ul>
                         <li>A goldfish has a 3 second memory span.</li>
                         <li>George Washington died before dinosaurs were discovered.</li>
                         <li>The Star Wars cartoons are better than the movies. (FACT)</li>
@@ -34,7 +34,7 @@ $_SESSION["about"] = '<ul>
                         <li>Eating Meat</li>
                     </ul>';
 
-$assignmentList = '
+$_SESSION["assignmentList"] = '
                         <a href="#"><li class="drop-selector"><h3>Week 3</h3></li></a>
                         <a href="#"><li class="drop-selector"><h3>Week 4</h3></li></a>
                         <a href="#"><li class="drop-selector"><h3>Week 5</h3></li></a>

@@ -18,7 +18,7 @@
         </div>
         <div class="col2">
             <ul>
-                <?php echo $assignmentList; ?>
+                <?php echo $_SESSION["assignmentList"]; ?>
 
             </ul>
 
