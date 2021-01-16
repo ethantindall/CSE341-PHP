@@ -1,3 +1,6 @@
+console.log("hi");
+
+
 $(document).ready(function() {
     function dropMenu(x) {
         let displayDiv = $("."+ x);
