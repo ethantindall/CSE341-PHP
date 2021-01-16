@@ -34,7 +34,7 @@ $_SESSION["about"] = '<ul>
                         <li>Eating Meat</li>
                     </ul>';
 
-$_SESSION["assignmentList"] = '
+$assignmentList = '
                         <a href="#"><li class="drop-selector"><h3>Week 3</h3></li></a>
                         <a href="#"><li class="drop-selector"><h3>Week 4</h3></li></a>
                         <a href="#"><li class="drop-selector"><h3>Week 5</h3></li></a>
