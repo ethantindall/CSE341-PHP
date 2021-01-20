@@ -10,7 +10,11 @@
 
 </head>
 <body>
-<header><h1>Confirmation Page</h1></header>
+<header>    
+        
+        <span>PET</span><b>TOYS</b>
+
+    <h1>Confirmation Page</h1></header>
 <main>
     <h2>Your order has been placed!</h2>
     <div>

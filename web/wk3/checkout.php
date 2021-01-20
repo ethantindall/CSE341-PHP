@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style><?php include "main.css" ?></style>
+    <style><?php include "form.css" ?></style>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>CSE341 Wk 3 Checkout</title>
 
 </head>
 <body>
-<header><h1>Checkout Page</h1></header>
+<header>   
+        
+        <span>PET</span><b>TOYS</b>
+
+    <h1>Checkout Page</h1></header>
 
 <form method="POST" action="/wk3/index.php">
 
@@ -25,7 +31,7 @@
     <label>Zipcode</label>
     <input required type="text" name="zipcode" id="zipcode"><br>
 
-    <input type="submit" value="Checkout">
+    <input id="sendButton" type="submit" value="Checkout">
     <input required type="hidden" name="action" value="processTransaction">
 
 </form>

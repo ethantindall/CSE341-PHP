@@ -8,8 +8,12 @@
     <title>CSE341 Wk 3 Cart</title>
 
 </head>
-<body>
-    <header><h1>Your Cart</h1>    
+<body> 
+    <header>    
+        <span>PET</span><b>TOYS</b>
+
+    
+    <h1>Your Cart</h1>    
     <a href="/wk3/"><button class="viewStore">View Store</button></a>
 </header>
 
