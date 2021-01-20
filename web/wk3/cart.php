@@ -10,7 +10,7 @@
 </head>
 <body>
     <header><h1>Your Cart</h1>    
-    <a href="/CSE341-PHP/web/wk3/"><button class="viewStore">View Store</button></a>
+    <a href="/wk3/"><button class="viewStore">View Store</button></a>
 </header>
 
     <main class="shoppingCart">
