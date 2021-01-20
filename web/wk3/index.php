@@ -37,7 +37,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         break;
     case 'removecatToy':
         if(isset($_COOKIE['catToy'])) {
-            setcookie('catToy', 'Cat Toy', time()-3600, '/CSE341-PHP/web/wk3');
+            setcookie('catToy', 'Cat Toy', time()-3600, '//wk3');
         } else {
             echo "Error: Cookie not found.";
         }
@@ -49,7 +49,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         break;
     case 'removedogToy':
         if(isset($_COOKIE['dogToy'])) {
-            setcookie('dogToy', 'Dog Toy', time()-3600, '/CSE341-PHP/web/wk3');
+            setcookie('dogToy', 'Dog Toy', time()-3600, '/wk3');
         } else {
             echo "Error: Cookie not found.";
         }
@@ -61,7 +61,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         break;
     case 'removedolphinToy':
         if(isset($_COOKIE['dolphinToy'])) {
-            setcookie('dolphinToy', 'Dolphin Toy', time()-3600, '/CSE341-PHP/web/wk3');
+            setcookie('dolphinToy', 'Dolphin Toy', time()-3600, '/wk3');
         } else {
             echo "Error: Cookie not found.";
         }
@@ -73,7 +73,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         break;
     case 'removefrogToy':
         if(isset($_COOKIE['frogToy'])) {
-            setcookie('frogToy', 'Frog Toy', time()-3600, '/CSE341-PHP/web/wk3');
+            setcookie('frogToy', 'Frog Toy', time()-3600, '/wk3');
         } else {
             echo "Error: Cookie not found.";
         }
@@ -85,7 +85,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         break;
     case 'removefishToy':
         if(isset($_COOKIE['fishToy'])) {
-            setcookie('fishToy', 'Fish Toy', time()-3600, '/CSE341-PHP/web/wk3');
+            setcookie('fishToy', 'Fish Toy', time()-3600, '/wk3');
         } else {
             echo "Error: Cookie not found.";
         }
@@ -97,7 +97,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         break;
     case 'removeeagleToy':
         if(isset($_COOKIE['eagleToy'])) {
-            setcookie('eagleToy', 'Eagle Toy', time()-3600, '/CSE341-PHP/web/wk3');
+            setcookie('eagleToy', 'Eagle Toy', time()-3600, '/wk3');
         } else {
             echo "Error: Cookie not found.";
         }
@@ -139,7 +139,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     $_SESSION['finalCart'] .= "</ul>";
 
         /*process transaction code here */
-        include 'confirmation.php';
+        include '/wk3/confirmation.php';
         break;
     default:
         include 'store.php';
