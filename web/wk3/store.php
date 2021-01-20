@@ -26,7 +26,7 @@
     <main>
 
         <div class="card card0">
-            <img src="https://loremflickr.com/200/100/cat" alt="Cat toy">
+            <div id="placeholder"><img src="https://loremflickr.com/200/100/cat" alt="Cat toy"></div>
             <h2>Cat Toy</h2>
                 <form>
                     <input id="add0" type="submit" value="<?php echo $_SESSION['catToy']; ?>">
@@ -35,7 +35,7 @@
         </div>
 
         <div class="card card1">
-            <img src="https://loremflickr.com/200/100/dog" alt="Dog toy">
+        <div id="placeholder"><img src="https://loremflickr.com/200/100/dog" alt="Dog toy"></div>
             <h2>Dog Toy</h2>
                 <form>
                     <input id="add1" type="submit" value="<?php echo $_SESSION['dogToy']; ?>">
@@ -44,7 +44,7 @@
         </div>
 
         <div class="card card2">
-            <img src="https://loremflickr.com/200/100/dolphin" alt="Dolphin toy">
+        <div id="placeholder">    <img src="https://loremflickr.com/200/100/dolphin" alt="Dolphin toy"></div>
             <h2>Dolphin Toy</h2>
                 <form>
                     <input id="add2" type="submit" value="<?php echo $_SESSION['dolphinToy']; ?>">
@@ -53,7 +53,7 @@
         </div>
 
         <div class="card card3">
-            <img src="https://loremflickr.com/200/100/frog" alt="Frog toy">
+        <div id="placeholder">   <img src="https://loremflickr.com/200/100/frog" alt="Frog toy"></div>
             <h2>Frog Toy</h2>
                 <form>
                     <input id="add3" type="submit" value="<?php echo $_SESSION['frogToy']; ?>">
@@ -62,7 +62,7 @@
         </div>
 
         <div class="card card4">
-            <img src="https://loremflickr.com/200/100/fish" alt="Fish toy">
+        <div id="placeholder"> <img src="https://loremflickr.com/200/100/fish" alt="Fish toy"></div>
             <h2>Fish Toy</h2>
                 <form>
                     <input id="add4" type="submit" value="<?php echo $_SESSION['fishToy']; ?>">
@@ -71,7 +71,7 @@
         </div>
 
         <div class="card card5">
-            <img src="https://loremflickr.com/200/100/eagle" alt="Eagle Toy">
+        <div id="placeholder">     <img src="https://loremflickr.com/200/100/eagle" alt="Eagle Toy"></div>
             <h2>Eagle Toy</h2>
                 <form>
                     <input id="add5" type="submit" value="<?php echo $_SESSION['eagleToy']; ?>">
