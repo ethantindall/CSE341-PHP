@@ -44,7 +44,7 @@ main {
 .card {
     border: 1px solid black;
     width: 150px;
-    height: 150px;
+    height: 158px;
     margin: 20px 0 20px 0;
     text-align: center;
     background-color: #191919;
@@ -85,6 +85,9 @@ div a {
 }
 .shoppingCart button{
     width: 150px;   
+}
+form input {
+    width: 90%;
 }
 .cartItem {
     display: flex;
