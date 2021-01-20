@@ -7,17 +7,8 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
  }
 
- switch ($action){
-    case 'assignments': 
-        include 'homepage/assignments.php';
-        break;
-    default:
-        include 'homepage/homepage.php';
-        break;
-    }
-    
 
-$_SESSION['facts'] = '<ul>
+ $_SESSION['facts'] = '<ul>
                         <li>A goldfish has a 3 second memory span.</li>
                         <li>George Washington died before dinosaurs were discovered.</li>
                         <li>The Star Wars cartoons are better than the movies. (FACT)</li>
@@ -33,6 +24,19 @@ $_SESSION["about"] = '<ul>
                         <li>Eating Pizza</li>
                         <li>Eating Meat</li>
                     </ul>';
+
+                    
+ switch ($action){
+    case 'assignments': 
+        include 'homepage/assignments.php';
+        break;
+    default:
+        include 'homepage/homepage.php';
+        break;
+    }
+    
+
+
 
 $_SESSION["assignmentList"] = '
 <a href="https://blooming-ocean-40478.herokuapp.com/wk3/index.php"><li class="drop-selector"><h3>Week 3</h3></li></a>
