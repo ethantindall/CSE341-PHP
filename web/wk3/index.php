@@ -37,7 +37,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         break;
     case 'removecatToy':
         if(isset($_COOKIE['catToy'])) {
-            setcookie('catToy', 'Cat Toy', time()-3600, '//wk3');
+            setcookie('catToy', 'Cat Toy', time()-3600, '/wk3');
         } else {
             echo "Error: Cookie not found.";
         }
@@ -139,7 +139,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     $_SESSION['finalCart'] .= "</ul>";
 
         /*process transaction code here */
-        include '/wk3/confirmation.php';
+        include 'confirmation.php';
         break;
     default:
         include 'store.php';
