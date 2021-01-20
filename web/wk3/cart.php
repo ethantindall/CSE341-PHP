@@ -20,6 +20,6 @@
     
     </main>
 
-    <?php if (isset($_SESSION['cartItem']) && $_SESSION['cartItem'] != 'You have no items in your cart.') { echo '<footer><a href="/CSE341-PHP/web/wk3/?action=checkoutPage"><button>Proceed To Checkout</button></a></footer>';} ?>
+    <?php if (isset($_SESSION['cartItem']) && $_SESSION['cartItem'] != 'You have no items in your cart.') { echo '<footer><a href="/wk3/?action=checkoutPage"><button>Proceed To Checkout</button></a></footer>';} ?>
 </body>
 </html>

@@ -41,7 +41,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         } else {
             echo "Error: Cookie not found.";
         }
-        header('Location: /CSE341-PHP/web/wk3/index.php/?action=cart');
+        header('Location: /wk3/index.php/?action=cart');
         break;
     case 'adddogToy': 
         savedOrNot('dogToy', 'Dog Toy');
@@ -53,7 +53,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         } else {
             echo "Error: Cookie not found.";
         }
-        header('Location: /CSE341-PHP/web/wk3/index.php/?action=cart');
+        header('Location: /wk3/index.php/?action=cart');
         break;
     case 'adddolphinToy': 
         savedOrNot('dolphinToy', 'Dolphin Toy');
@@ -65,7 +65,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         } else {
             echo "Error: Cookie not found.";
         }
-        header('Location: /CSE341-PHP/web/wk3/index.php/?action=cart');
+        header('Location: /wk3/index.php/?action=cart');
         break;
     case 'addfrogToy': 
         savedOrNot('frogToy', 'Frog Toy');
@@ -77,7 +77,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         } else {
             echo "Error: Cookie not found.";
         }
-        header('Location: /CSE341-PHP/web/wk3/index.php/?action=cart');
+        header('Location: /wk3/index.php/?action=cart');
         break;
     case 'addfishToy': 
         savedOrNot('fishToy', 'Fish Toy');
@@ -89,7 +89,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         } else {
             echo "Error: Cookie not found.";
         }
-        header('Location: /CSE341-PHP/web/wk3/index.php/?action=cart');
+        header('Location: /wk3/index.php/?action=cart');
         break;
     case 'addeagleToy': 
         savedOrNot('eagleToy', 'Eagle Toy');
@@ -101,7 +101,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         } else {
             echo "Error: Cookie not found.";
         }
-        header('Location: /CSE341-PHP/web/wk3/index.php/?action=cart');
+        header('Location: /wk3/index.php/?action=cart');
         break;
     case 'cart':
         $_SESSION['cartItem'] = "";
