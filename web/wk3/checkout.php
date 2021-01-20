@@ -11,7 +11,7 @@
 <body>
 <header><h1>Checkout Page</h1></header>
 
-<form method="POST" action="/CSE341-PHP/web/wk3/index.php">
+<form method="POST" action="/wk3/index.php">
 
     <label>Street Address</label>
     <input name="address" id="address" type="text"><br>
