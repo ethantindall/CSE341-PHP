@@ -14,19 +14,19 @@
 <form method="POST" action="/wk3/index.php">
 
     <label>Street Address</label>
-    <input name="address" id="address" type="text"><br>
+    <input required name="address" id="address" type="text"><br>
     
     <label>City</label>
-    <input type="text" name="city" id="city"><br>
+    <input required type="text" name="city" id="city"><br>
     
     <label>State</label>
-    <input type="text" name="state" id="state"><br>
+    <input required type="text" name="state" id="state"><br>
     
     <label>Zipcode</label>
-    <input type="text" name="zipcode" id="zipcode"><br>
+    <input required type="text" name="zipcode" id="zipcode"><br>
 
     <input type="submit" value="Checkout">
-    <input type="hidden" name="action" value="processTransaction">
+    <input required type="hidden" name="action" value="processTransaction">
 
 </form>
 
