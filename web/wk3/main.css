@@ -1,9 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;600;700&display=swap');
+
+body {
+    background-color: #191919;
+    padding: 0;
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    width: 800px; 
+    margin: 0 auto;
+}
+
+header {
+    
+    text-align: center;
+    font-size: 3rem;
+    padding: 0;
+    margin: 30px 0 0 0;
+}
+button {
+    background-color: gray;
+    color: white;
+    font-weight: 700;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1.3rem;
+}
+header span {
+    font-weight: 100;
+    color: pink;
+}
+h1 {
+    font-family: 'Overpass', sans-serif;
+}
+
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    margin: 20px;
+    background-color: pink;
 }
 
 .card {
     border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    margin: 20px 0 20px 0;
+    text-align: center;
+    background-color: #191919;
+    transition: .5s;
+}
+.card img {
+    width: 100%;
+}
+.card h2 {
+    padding-top: 5px;
+    font-size: 1rem;
+}
+
+div input {
+    height: 25px;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    font-weight: 600;
+}
+button:hover {
+    box-shadow: 2px 2px 2px black;
+}
+
+div a {
+    width: 100%;
+}
+
+.viewCart {
+    padding: 10px;
+    margin: 20px;
+    font-size: 1rem;
+}
+.shoppingCart {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+.shoppingCart button{
+    width: 150px;   
+}
+.cartItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
 }
