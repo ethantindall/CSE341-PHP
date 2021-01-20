@@ -33,7 +33,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
  switch ($action){
     case 'addcatToy': 
         savedOrNot('catToy', 'Cat Toy');
-        header('Location: /CSE341-PHP/web/wk3/');
+        header('Location: /web/wk3/');
         break;
     case 'removecatToy':
         if(isset($_COOKIE['catToy'])) {
@@ -45,7 +45,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         break;
     case 'adddogToy': 
         savedOrNot('dogToy', 'Dog Toy');
-        header('Location: /CSE341-PHP/web/wk3/');
+        header('Location: /web/wk3/');
         break;
     case 'removedogToy':
         if(isset($_COOKIE['dogToy'])) {
