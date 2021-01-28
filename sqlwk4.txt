@@ -1,0 +1,17 @@
+CREATE TABLE users(userId SERIAL PRIMARY KEY, firstName varchar(40) ,lastName varchar(40));
+
+CREATE TABLE sessions(sessionId SERIAL PRIMARY KEY,day varchar(15),time varchar(40), year int, month int);
+
+CREATE TABLE speaker(speakerId SERIAL PRIMARY KEY, FirstName varchar(40) ,LastName varchar(40));
+
+CREATE TABLE notes(noteId SERIAL PRIMARY KEY, text varchar(500), userId int REFERENCES users(UserId), sessionId int REFERENCES sessions(SessionId),speakerId int REFERENCES speaker(speakerId));
+
+INSERT INTO users(firstName, lastName)) VALUES ('Fred', 'McDonald');
+
+INSERT INTO sessions(day, time, year, month) VALUES ('Sunday', 'AM', 1998, 10), ('Saturday', 'PM', 2004, 4);
+
+INSERT INTO speaker(FirstName, LastName) VALUES ('President', 'Hinkley');
+
+INSERT INTO notes (text, userId , sessionId ,speakerId) VALUES ('great talk read all the time', 1, 1, 1), ('yep pretty good talk', 1, 1, 1);
+
+SELECT * FROM notes n INNER JOIN speaker s ON n.speakerId = s.speakerId;

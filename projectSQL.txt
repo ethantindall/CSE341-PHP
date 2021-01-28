@@ -1,0 +1,49 @@
+CREATE TABLE storageLocations (
+	storage_item_id SERIAL PRIMARY KEY,
+	storage_room VARCHAR NOT NULL,
+	storage_rack VARCHAR NOT NULL,
+	storage_shelf INT NOT NULL,
+	storage_notes VARCHAR
+);
+
+CREATE TABLE strataInventory (
+	item_id SERIAL PRIMARY KEY,
+	item_sticker_id INT,
+	item_name VARCHAR NOT NULL,
+	item_description VARCHAR,
+	item_quantity INT NOT NULL,
+	item_storage_location INT NOT NULL,
+	item_purchase_date DATE,
+	item_checked_out BOOLEAN,
+	item_checked_out_date DATE,
+	item_checked_out_by INT,
+
+	FOREIGN KEY (item_storage_location) REFERENCES storageLocations(storage_item_id),
+	FOREIGN KEY (item_checked_out_by) REFERENCES support_staff(support_staff_id)
+);
+
+CREATE TABLE spectraInventory (
+	item_id SERIAL PRIMARY KEY,
+	item_name VARCHAR NOT NULL,
+	item_description VARCHAR,
+	item_quantity INT NOT NULL,
+	item_storage_location INT NOT NULL,
+	item_owner VARCHAR,
+	item_purchase_date DATE,
+	item_checked_out BOOLEAN,
+	item_checked_out_date DATE,
+	item_checked_out_by INT,
+
+	FOREIGN KEY (item_storage_location) REFERENCES storageLocations(storage_item_id),
+	FOREIGN KEY (item_checked_out_by) REFERENCES support_staff(support_staff_id)
+);
+
+CREATE TABLE support_staff (
+	support_staff_id SERIAL PRIMARY KEY,
+	support_staff_name VARCHAR NOT NULL
+);
+
+
+
+INSERT INTO storageLocations(storage_room, storage_rack, storage_shelf) 
+VALUES ('','',0)
