@@ -42,8 +42,3 @@ CREATE TABLE support_staff (
 	support_staff_id SERIAL PRIMARY KEY,
 	support_staff_name VARCHAR NOT NULL
 );
-
-
-
-INSERT INTO storageLocations(storage_room, storage_rack, storage_shelf) 
-VALUES ('','',0)
