@@ -1,18 +1,27 @@
-<!DOCTYPE html>
+<?php 
+
+require 'connect.php';
+$db = connect_to_db();
+
+?><!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Wk 5 Team</title>
 
 </head>
 <body>
-    <ul>
-        <li>Book: <?php echo $_SESSION['book'] ?></li>
-        <li>Chapter: <?php echo $_SESSION['chapter'] ?></li>
-        <li>Verse: <?php echo $_SESSION['verse'] ?></li>
-        <li>Content: <?php echo $_SESSION['content'] ?></li>
-    </ul>
+<h1>SCRIPTURE RESOURCES</h1>
+
+<?php 
+
+$statement = $db->query('SELECT username, password FROM note_user');
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
+  $_SESSION['rows'] .= 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
+}
+?>
+
 </body>
 </html>
