@@ -19,7 +19,7 @@ $db = connect_to_db();
 $statement = $db->query('SELECT username, password FROM note_user');
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-  $_SESSION['rows'] .= 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
+ echo 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
 }
 ?>
 
