@@ -1,11 +1,11 @@
 console.log("hi");
-
+function dropMenu(x) {
+    let displayDiv = $("."+ x);
+    displayDiv.toggle(500);
+}
 
 $(document).ready(function() {
-    function dropMenu(x) {
-        let displayDiv = $("."+ x);
-        displayDiv.toggle(500);
-    }
+
 
     $('.sel1').click(function(){
         dropMenu("drop1");

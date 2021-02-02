@@ -1,0 +1,36 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Provide a link to your myDb.sql file at GitHub (the file that contains all the SQL commands needed to create your database).
+
+https://github.com/roguejuan44/CSE341-PHP/blob/master/db/myDb.sql
+
+2. Describe something from your database that you think came together very nicely.
+
+I like how the foreign keys came together. It has been a while since I've practiced SQL and it was fun relearning how the tables interact.
+
+3. Describe something from your database that you think could be improved or extended in the future.
+
+I had to deviate from my original plan some. Last week I submitted a database diagram including tables for clients and users. However, since I would actually like to use this at my work I thought I should remove those tables to keep that information private. I replaced them with the support_staff and storageLocations tables. I do think that the database would benefit from having a client table though.
+
+4. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+I was surprised to learn about PSQL. I know about MySQL and the other variations, but I'd never heard about PSQL so it was interesting to learn about how it works.
+
+5. Briefly describe two principles of good database design.
+
+Reduce redundancy: This can be done through using foreign keys to avoid having multiple versions of the same data.
+Table Organization: Group similar data on the same table and dissimilar data on different tables.
+
+6. Please select the category you feel best describes your assignment:
+1 - Some attempt was made
+2 - Developing, but significantly deficient
+3 - Slightly deficient, but still mostly adequate
+4 - Meets requirements
+5 - Shows creativity and excels above and beyond requirements
+
+5
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+
+Began populating the tables with useful data.
+
