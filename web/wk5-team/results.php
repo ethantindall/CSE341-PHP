@@ -15,12 +15,13 @@ $db = connect_to_db();
 <h1>SCRIPTURE RESOURCES</h1>
 
 <?php 
+    echo 'hi';
+    $statement = $db->prepare("SELECT book, chapter, verse, content FROM scriptures");
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+    echo 'Scripture: ' . $row['book'] . ':' . $row['chapter'] . $row['verse'] . '<br/>';
+    }
 
-$statement = $db->query('SELECT username, password FROM note_user');
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-{
- echo 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
-}
 ?>
 
 </body>
