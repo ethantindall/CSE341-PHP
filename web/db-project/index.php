@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style><?php include "main.css" ?></style>
+    <style><?php include "button.css" ?></style>
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
     <title>Strata SHIP</title>
 
 </head>
@@ -28,7 +30,7 @@
             </div>
             <div>
             <label>Search By:</label>
-            <select name="searchBy" id="searchBy">
+            <select name="searchBy" onclick="check()" id="searchBy">
                 <option value="name">Name</option>
                 <option value="checked-out">Checked Out</option>
                 <option value="sticker-id">Sticker ID</option>
@@ -36,7 +38,7 @@
             </select>
             </div>
 
-            <input type="text" name="searchParameter">
+            <input type="text" id="searchParameter" name="searchParameter">
             <input id="search" type="submit" value="Search">
             <input required type="hidden" name="action" value="searchDatabase">
         </form>
@@ -46,5 +48,6 @@
     <footer>
 
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
