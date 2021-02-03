@@ -20,7 +20,7 @@ require 'connect.php';
     $ints = (int) $scripture;
     echo $ints + 2; 
 
-    foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE id LIKE " . $ints) as $row) {
+    foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE id = 2") as $row) {
         echo 'Scripture:' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
     }
 
