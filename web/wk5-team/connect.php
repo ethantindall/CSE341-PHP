@@ -20,9 +20,9 @@ function connect_to_db() {
 
         return $db;
 
-    } catch (PDOException $ex) {
+    } catch (PDOException $e) {
         
-        echo 'Error!: ' . $ex->getMessage();
+        echo 'Error!: ' . $e->getMessage();
         die();
     }
 }
