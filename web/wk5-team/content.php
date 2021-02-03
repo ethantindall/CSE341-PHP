@@ -18,9 +18,9 @@ require 'connect.php';
 
     $scripture = $_GET['id'];
 
-    /*foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE book LIKE '%{$_POST["book_name"]}%'") as $row) {
-        echo '<a href="content.php/?action='. $row['id'] .'">Scripture: </a>' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
-    }*/
+    foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE id = '{$scripture}'") as $row) {
+        echo 'Scripture:' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
+    }
 
 
 ?>
