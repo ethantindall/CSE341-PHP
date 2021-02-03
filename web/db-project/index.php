@@ -46,7 +46,7 @@ require 'connect.php';
             <input id="search" type="submit" value="Search">
         </form>
         
-        <a href="add.php"><button type="button">Add Info to Database</button></a>
+        <button type="button"><a href="add.php">Add Info to Database</a></button>
 
 
         <div class="display-area">
