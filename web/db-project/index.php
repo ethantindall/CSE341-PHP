@@ -55,10 +55,11 @@ require 'connect.php';
                     <th>Checked Out</th>
                 </tr>
             <?php 
-                echo $_POST['company'];
+                $company = $_POST['company'] . 'Inventory';
+                echo $company;
                 $db = connect_to_db();
                 $table = '';
-                foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $_POST['company'] . 'Inventory') as $row) {
+                foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $company) as $row) {
                     $boolcheckedout = truefalse($row['item_checked_out']);
                     $table .=  '<tr><td>' . $row['item_id'] 
                           .= '</td><td>' . $row['item_sticker_id']
