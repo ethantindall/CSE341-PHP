@@ -25,7 +25,7 @@ require 'connect.php';
 
     <main>
         
-        <form method="POST" action="/wk3/index.php">
+        <form method="POST" action="index.php">
             <div>
                 <label>Select company: </label>
                 <input type="radio" name="company" value="Strata">Strata</input>
