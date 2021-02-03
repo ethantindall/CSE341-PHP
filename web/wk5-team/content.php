@@ -18,9 +18,9 @@ require 'connect.php';
 
     $scripture = $_GET['id'];
     $ints = (int) $scripture;
+    echo $ints + 2; 
 
-
-    foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE id={$ints}") as $row) {
+    foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE id LIKE " . $ints) as $row) {
         echo 'Scripture:' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
     }
 
