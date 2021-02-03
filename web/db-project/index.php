@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php 
+session_start();
+
+require 'connect.php';
+
+?><!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
