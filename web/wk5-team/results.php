@@ -18,8 +18,8 @@ require 'connect.php';
     echo 'hi';
     $db = connect_to_db();
     echo $_POST['book_name'];
-    foreach ($db->query("SELECT book, chapter, verse, content FROM scriptures WHERE book LIKE '%{$_POST["book_name"]}%'") as $row) {
-        echo 'Scripture: ' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
+    foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE book LIKE '%{$_POST["book_name"]}%'") as $row) {
+        echo '<a href="content.php/?action='. $row['id'] .'">Scripture: </a>' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
     }
 
 ?>
