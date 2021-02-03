@@ -11,14 +11,14 @@ require 'connect.php';
     <style><?php include "main.css" ?></style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
-    <title>Strata SHIP</title>
+    <title>Strata SHIZ</title>
 
 </head>
 <body>
     <header>   
         <div class="bar topbar"></div>
 
-        <div class="slantedbar"><h1>Spectra Helpdesk Inventory Program</h1></div>
+        <div class="slantedbar"><h1>Spectra Helpdesk Inventory Zingy</h1></div>
         <div class="bar bottombar"></div>
 
     </header>
