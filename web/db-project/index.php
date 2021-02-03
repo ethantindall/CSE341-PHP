@@ -56,11 +56,11 @@ require 'connect.php';
                 </tr>
             <?php 
                 $company = $_POST['company'] . 'Inventory';
-                echo $company;
                 $db = connect_to_db();
                 $table = '';
 
                 if ($company == 'strataInventory') {
+                    echo ucfirst($_POST['company'] . ' Inventory');
                     foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $company) as $row) {
                         $boolcheckedout = truefalse($row['item_checked_out']);
                         $table .=  '<tr><td>' . $row['item_id'] 
@@ -73,6 +73,7 @@ require 'connect.php';
                     echo $table;
                 }
                 else if ($company == 'spectraInventory') {
+                    echo ucfirst($_POST['company'] . ' Inventory');
                     foreach ($db->query('SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' . $company) as $row) {
                         $boolcheckedout = truefalse($row['item_checked_out']);
                         $table .=  '<tr><td>' . $row['item_id'] 
