@@ -33,7 +33,7 @@ require 'connect.php';
             </div>
             <div>
             <label>Search By:</label>
-            <select name="searchBy" id="searchBy" <?php if (isset($_POST['searchBy'])) {echo 'value=\"$_POST[\'searchBy\']\"';} ?>>
+            <select name="searchBy" id="searchBy" <?php if (isset($_POST['searchBy'])) {echo 'value=' . $_POST['searchBy'];} ?>>
                 <option value="item_name">Name</option>
                 <option value="item_checked_out">Checked Out</option>
                 <option value="item_sticker_id">Sticker ID</option>
