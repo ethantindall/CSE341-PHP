@@ -84,7 +84,7 @@ require 'connect.php';
                     echo $table;
                 }
                 else {
-                    echo 'Please Select a Table'
+                    echo 'Please Select a Table';
                 }
 
 
