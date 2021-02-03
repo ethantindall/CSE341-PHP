@@ -41,7 +41,7 @@ require 'connect.php';
             </select>
             </div>
 
-            <input type="text" name="searchParameter"s>
+            <input type="text" name="searchParameters">
             <input id="search" type="submit" value="Search">
         </form>
         
