@@ -11,14 +11,14 @@ require 'connect.php';
     <style><?php include "main.css" ?></style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
-    <title>Strata SHIZ</title>
+    <title>Strata SHIP</title>
 
 </head>
 <body>
     <header>   
         <div class="bar topbar"></div>
 
-        <div class="slantedbar"><h1>Spectra Helpdesk Inventory Zingy</h1></div>
+        <div class="slantedbar"><h1>Spectra Helpdesk Inventory Program</h1></div>
         <div class="bar bottombar"></div>
 
     </header>
@@ -59,16 +59,35 @@ require 'connect.php';
                 echo $company;
                 $db = connect_to_db();
                 $table = '';
-                foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $company) as $row) {
-                    $boolcheckedout = truefalse($row['item_checked_out']);
-                    $table .=  '<tr><td>' . $row['item_id'] 
-                          .= '</td><td>' . $row['item_sticker_id']
-                          .= '</td><td>' . $row['item_name']  
-                          .= '</td><td>' . $row['item_quantity']
-                          .= '</td><td>' . $boolcheckedout
-                          .= '</td></tr>';
+                if ($company = 'strataInventory') {
+                    foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $company) as $row) {
+                        $boolcheckedout = truefalse($row['item_checked_out']);
+                        $table .=  '<tr><td>' . $row['item_id'] 
+                            .= '</td><td>' . $row['item_sticker_id']
+                            .= '</td><td>' . $row['item_name']  
+                            .= '</td><td>' . $row['item_quantity']
+                            .= '</td><td>' . $boolcheckedout
+                            .= '</td></tr>';
+                    }
+                    echo $table;
                 }
-                echo $table;
+                else if ($company = 'spectraInventory') {
+                    foreach ($db->query('SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' . $company) as $row) {
+                        $boolcheckedout = truefalse($row['item_checked_out']);
+                        $table .=  '<tr><td>' . $row['item_id'] 
+                            .= '</td><td>' . $row['item_name']  
+                            .= '</td><td>' . $row['item_quantity']
+                            .= '</td><td>' . $row['item_owner']
+                            .= '</td><td>' . $boolcheckedout
+                            .= '</td></tr>';
+                    }
+                    echo $table;
+                }
+                else {
+                    echo 'Please Select a Table'
+                }
+
+
             ?>          
             
             </table>
