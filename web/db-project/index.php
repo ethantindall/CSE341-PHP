@@ -24,37 +24,30 @@ require 'connect.php';
     </header>
 
     <main>
-        
+
         <form method="POST" action="index.php">
             <div>
                 <label>Select company: </label>
                 <input type="radio" name="company" value="strata"  <?php if (isset($_POST['company']) && $_POST['company'] == 'strata') {echo 'checked="checked" ';} ?>>Strata</input>
                 <input type="radio" name="company" value="spectra" <?php if (isset($_POST['company']) && $_POST['company'] == 'spectra') {echo 'checked="checked" ';} ?>>Spectra</input>
             </div>
-            <div>
-            <label>Search By:</label>
-            <select name="searchBy" id="searchBy" onclick="dropedit()">
+            
+            <label>Search By Name:</label>
+            <!--<div>
+                <select name="searchBy" id="searchBy" onclick="dropedit()">
                 <option value="item_name">Name</option>
                 <option value="item_checked_out">Checked Out</option>
                 <option value="item_sticker_id">Sticker ID</option>
                 <option value="item_storage_location">Location</option>
             </select>
-            </div>
+            </div>-->
             <input type="text" name="searchParameters" <?php if (isset($_POST['searchParameters'])) {echo 'value=' . $_POST['searchParameters'];} ?>
 >
             <input id="search" type="submit" value="Search">
         </form>
         
-        <div id="addInfo">
-            <h3>Add Info to Database</h3>
-            <form method="POST" action="index.php">
-            <label>Select company: </label>
-                <input type="radio" name="company" value="strata"  <?php if (isset($_POST['company']) && $_POST['company'] == 'strata') {echo 'checked="checked" ';} ?>>Strata</input>
-                <input type="radio" name="company" value="spectra" <?php if (isset($_POST['company']) && $_POST['company'] == 'spectra') {echo 'checked="checked" ';} ?>>Spectra</input>
-            
-                <input id="search" type="submit" value="Add to DB">
-            </form>
-        </div>
+        <a href="add.php"><button type="button">Add Info to Database</button></a>
+
 
         <div class="display-area">
             <table>
@@ -76,6 +69,7 @@ require 'connect.php';
             
             </table>
         </div>
+
     </main>
     <script src="script.js"></script>
 </body>
