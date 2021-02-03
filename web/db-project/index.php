@@ -58,8 +58,7 @@ require 'connect.php';
                 $company = $_POST['company'] . 'Inventory';
                 $searchby = $_POST['searchBy'];
                 $textinput = $_POST['searchParameters'];
-                echo $searchby;
-                echo $textinput;
+  
                 searchresults($company, $searchby, $textinput);
 
             ?>          
