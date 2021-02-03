@@ -45,7 +45,7 @@ require 'connect.php';
             <input id="search" type="submit" value="Search">
         </form>
         
-        <div>
+        <div id="addInfo">
             <h3>Add Info to Database</h3>
             <form method="POST" action="index.php">
             <label>Select company: </label>
