@@ -40,7 +40,31 @@
             <input id="search" type="submit" value="Search">
             <input required type="hidden" name="action" value="searchDatabase">
         </form>
-        <div class="display-area"><p>Search Results Here</p></div>
+        
+        <div class="display-area">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Sticker Number</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Checked Out</th>
+                </tr>
+            <?php 
+                try {
+                    $db = connect_to_db();
+                    foreach ($db->query("SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM strataInventory") as $row) {
+                        echo '<tr><td>' . $row['id'] . '</td><td>' . $row['item_sticker_id']  . '</td><td>' . $row['item_name']  
+                                . '</td><td>' . $row['item_quantity'] . '</td></tr>';
+                    }   
+                } catch (PDOException $e) {
+                    echo 'Error!: Promote the Red Database';
+                    die();
+                }
+            ?>          
+            
+            </table>
+        </div>
     </main>
    
     <footer>
