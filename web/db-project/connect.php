@@ -37,4 +37,41 @@ function truefalse($varr) {
 }
 
 
+function searchresults($company, $searchby, $textinput) {
+    $db = connect_to_db();
+    $table = '';
+
+    if ($company == 'strataInventory') {
+        echo ucfirst($_POST['company'] . ' Inventory');
+        foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $company) as $row) {
+            $boolcheckedout = truefalse($row['item_checked_out']);
+            $table .=  '<tr><td>' . $row['item_id'] 
+                .= '</td><td>' . $row['item_sticker_id']
+                .= '</td><td>' . $row['item_name']  
+                .= '</td><td>' . $row['item_quantity']
+                .= '</td><td>' . $boolcheckedout
+                .= '</td></tr>';
+        }
+        echo $table;
+    }
+    else if ($company == 'spectraInventory') {
+        echo ucfirst($_POST['company'] . ' Inventory');
+        foreach ($db->query('SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' . $company) as $row) {
+            $boolcheckedout = truefalse($row['item_checked_out']);
+            $table .=  '<tr><td>' . $row['item_id'] 
+                .= '</td><td>' . $row['item_name']  
+                .= '</td><td>' . $row['item_quantity']
+                .= '</td><td>' . $row['item_owner']
+                .= '</td><td>' . $boolcheckedout
+                .= '</td></tr>';
+        }
+        echo $table;
+    }
+    else {
+        echo 'Please Select a Table';
+    }
+}
+
+
+
 ?>
