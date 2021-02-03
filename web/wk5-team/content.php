@@ -17,10 +17,10 @@ require 'connect.php';
 <?php 
 
     $scripture = $_GET['id'];
-    $scripture = intval($scripture);
+    $ints = (int) $scripture;
 
 
-    foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE id = {$scripture}") as $row) {
+    foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE id={$ints}") as $row) {
         echo 'Scripture:' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
     }
 
