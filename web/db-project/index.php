@@ -34,10 +34,10 @@ require 'connect.php';
             <div>
             <label>Search By:</label>
             <select name="searchBy" id="searchBy">
-                <option value="name">Name</option>
-                <option value="checked-out">Checked Out</option>
-                <option value="sticker-id">Sticker ID</option>
-                <option value="location">Location</option>
+                <option value="item_name">Name</option>
+                <option value="item_checked_out">Checked Out</option>
+                <option value="item_sticker_id">Sticker ID</option>
+                <option value="item_storage_location">Location</option>
             </select>
             </div>
 
@@ -56,8 +56,8 @@ require 'connect.php';
                 </tr>
             <?php 
                 $company = $_POST['company'] . 'Inventory';
-                $searchby = 0;
-                $textinput = 0;
+                $searchby = $_POST['searchBy'];
+                $textinput = $_POST['searchParameters'];
                 searchresults($company, $searchby, $textinput);
 
             ?>          

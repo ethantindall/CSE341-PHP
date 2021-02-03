@@ -42,28 +42,34 @@ function searchresults($company, $searchby, $textinput) {
     $table = '';
 
     if ($company == 'strataInventory') {
+        $dbquery = 'SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' 
+            . $company . ' WHERE ' . $searchby . ' LIKE ' . $textinput;
+
         echo ucfirst($_POST['company'] . ' Inventory');
-        foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $company) as $row) {
+        foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);
             $table .=  '<tr><td>' . $row['item_id'] 
-                .= '</td><td>' . $row['item_sticker_id']
-                .= '</td><td>' . $row['item_name']  
-                .= '</td><td>' . $row['item_quantity']
-                .= '</td><td>' . $boolcheckedout
-                .= '</td></tr>';
+                . '</td><td>' . $row['item_sticker_id']
+                . '</td><td>' . $row['item_name']  
+                . '</td><td>' . $row['item_quantity']
+                . '</td><td>' . $boolcheckedout
+                . '</td></tr>';
         }
         echo $table;
     }
     else if ($company == 'spectraInventory') {
+        $dbquery = 'SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' 
+            . $company . ' WHERE ' . $searchby . ' LIKE ' . $textinput;
+
         echo ucfirst($_POST['company'] . ' Inventory');
-        foreach ($db->query('SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' . $company) as $row) {
+        foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);
             $table .=  '<tr><td>' . $row['item_id'] 
-                .= '</td><td>' . $row['item_name']  
-                .= '</td><td>' . $row['item_quantity']
-                .= '</td><td>' . $row['item_owner']
-                .= '</td><td>' . $boolcheckedout
-                .= '</td></tr>';
+                . '</td><td>' . $row['item_name']  
+                . '</td><td>' . $row['item_quantity']
+                . '</td><td>' . $row['item_owner']
+                . '</td><td>' . $boolcheckedout
+                . '</td></tr>';
         }
         echo $table;
     }
