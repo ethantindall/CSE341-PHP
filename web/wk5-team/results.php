@@ -18,10 +18,10 @@ require 'connect.php';
     echo 'hi';
     $db = connect_to_db();
     echo $_POST['book_name'];
-    foreach ($db->query("SELECT book, chapter, verse, content FROM scriptures") as $row) {
+    foreach ($db->query("SELECT book, chapter, verse, content FROM scriptures WHERE book LIKE %{$_POST['book_name']}%") as $row) {
         echo 'Scripture: ' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
     }
-//WHERE book ILIKE %{$_POST['book_name']}%
+
 ?>
 
 </body>
