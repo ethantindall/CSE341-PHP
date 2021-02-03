@@ -59,10 +59,12 @@ require 'connect.php';
                 $db = connect_to_db();
                 $table = '';
                 foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM strataInventory') as $row) {
-                    $table .=  '<tr><td>' . $row['id'] 
+                    $table .=  '<tr><td>' . $row['item_id'] 
                           .= '</td><td>' . $row['item_sticker_id']
                           .= '</td><td>' . $row['item_name']  
                           .= '</td><td>' . $row['item_quantity']
+                          .= '</td><td>' . $row['item_checked_out']
+
                           .= '</td></tr>';
                 }
                 echo $table;
