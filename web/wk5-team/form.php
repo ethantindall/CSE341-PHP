@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <form method="POST" action="/wk3/results.php">
+    <form method="POST" action="results.php">
         Search by book: <input type="text" name="book_name" id="book">
         <input type="submit" name="submit" id="submit" value="Submit">
     </form>
