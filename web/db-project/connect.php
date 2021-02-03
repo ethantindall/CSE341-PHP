@@ -43,7 +43,7 @@ function searchresults($company, $searchby, $textinput) {
 
     if ($company == 'strataInventory') {
         $dbquery = 'SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' 
-            . $company . ' WHERE ' . $searchby . ' LIKE ' . intval($textinput);
+            . $company/*. ' WHERE ' . $searchby . ' LIKE ' . $textinput*/;
 
         echo ucfirst($_POST['company'] . ' Inventory');
         foreach ($db->query($dbquery) as $row) {
@@ -59,7 +59,7 @@ function searchresults($company, $searchby, $textinput) {
     }
     else if ($company == 'spectraInventory') {
         $dbquery = 'SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' 
-            . $company . ' WHERE ' . $searchby . ' LIKE ' . $textinput;
+            . $company/* . ' WHERE ' . $searchby . ' LIKE ' . $textinput*/;
 
         echo ucfirst($_POST['company'] . ' Inventory');
         foreach ($db->query($dbquery) as $row) {
