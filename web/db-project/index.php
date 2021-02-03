@@ -33,7 +33,7 @@ require 'connect.php';
             </div>
             <div>
             <label>Search By:</label>
-            <select name="searchBy" id="searchBy">
+            <select name="searchBy" id="searchBy" onclick="dropedit()">
                 <option value="item_name">Name</option>
                 <option value="item_checked_out">Checked Out</option>
                 <option value="item_sticker_id">Sticker ID</option>
@@ -45,6 +45,16 @@ require 'connect.php';
             <input id="search" type="submit" value="Search">
         </form>
         
+        <div>
+            <h3>Add Info to Database</h3>
+            <form method="POST" action="index.php">
+            <label>Select company: </label>
+                <input type="radio" name="company" value="strata"  <?php if (isset($_POST['company']) && $_POST['company'] == 'strata') {echo 'checked="checked" ';} ?>>Strata</input>
+                <input type="radio" name="company" value="spectra" <?php if (isset($_POST['company']) && $_POST['company'] == 'spectra') {echo 'checked="checked" ';} ?>>Spectra</input>
+            
+                <input id="search" type="submit" value="Add to DB">
+            </form>
+        </div>
 
         <div class="display-area">
             <table>
@@ -67,6 +77,6 @@ require 'connect.php';
             </table>
         </div>
     </main>
-
+    <script src="script.js"></script>
 </body>
 </html>
