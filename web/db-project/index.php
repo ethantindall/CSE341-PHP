@@ -55,6 +55,7 @@ require 'connect.php';
                     <th>Checked Out</th>
                 </tr>
             <?php 
+                echo $_POST['company'];
                 $db = connect_to_db();
                 $table = '';
                 foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $_POST['company']) as $row) {
