@@ -28,8 +28,8 @@ require 'connect.php';
         <form method="POST" action="index.php">
             <div>
                 <label>Select company: </label>
-                <input type="radio" name="company" value="Strata">Strata</input>
-                <input type="radio" name="company" value="Spectra">Spectra</input>
+                <input type="radio" name="company" value="strata">Strata</input>
+                <input type="radio" name="company" value="spectra">Spectra</input>
             </div>
             <div>
             <label>Search By:</label>
@@ -58,7 +58,7 @@ require 'connect.php';
                 echo $_POST['company'];
                 $db = connect_to_db();
                 $table = '';
-                foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $_POST['company']) as $row) {
+                foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $_POST['company'] . 'Inventory') as $row) {
                     $boolcheckedout = truefalse($row['item_checked_out']);
                     $table .=  '<tr><td>' . $row['item_id'] 
                           .= '</td><td>' . $row['item_sticker_id']
