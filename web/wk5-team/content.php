@@ -18,12 +18,11 @@ require 'connect.php';
 
     $scripture = $_GET['id'];
     $ints = (int) $scripture;
-    echo $ints + 2; 
 
     $db = connect_to_db();
 
     foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE id =" .$ints) as $row) {
-        echo 'Scripture:' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
+        echo 'Scripture:' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . ':' . $row['content'] . '<br/>';
     }
 
 
