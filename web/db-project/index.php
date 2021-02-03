@@ -59,7 +59,8 @@ require 'connect.php';
                 echo $company;
                 $db = connect_to_db();
                 $table = '';
-                if ($company = 'strataInventory') {
+
+                if ($company == 'strataInventory') {
                     foreach ($db->query('SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' . $company) as $row) {
                         $boolcheckedout = truefalse($row['item_checked_out']);
                         $table .=  '<tr><td>' . $row['item_id'] 
@@ -71,7 +72,7 @@ require 'connect.php';
                     }
                     echo $table;
                 }
-                else if ($company = 'spectraInventory') {
+                else if ($company == 'spectraInventory') {
                     foreach ($db->query('SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' . $company) as $row) {
                         $boolcheckedout = truefalse($row['item_checked_out']);
                         $table .=  '<tr><td>' . $row['item_id'] 
