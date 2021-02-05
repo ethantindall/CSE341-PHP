@@ -50,7 +50,7 @@ function searchresults($company, $searchby, $textinput) {
         $dbquery = 'SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' 
             . $company . ' WHERE ' . $searchby . " LIKE '%" . $textinput . "%';";
 
-        $table .= "<th>Sticker Number</th></tr>";
+        $table .= '<th>Sticker Number</th></tr>';
         echo ucfirst($_POST['company'] . ' Inventory');
         foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);
@@ -67,7 +67,7 @@ function searchresults($company, $searchby, $textinput) {
         $dbquery = 'SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' 
             . $company . ' WHERE ' . $searchby . " LIKE '%" . $textinput . "%';";
 
-        $table .= "<th>Owner</th></tr>";
+        $table .= '<th>Owner</th></tr>';
 
         echo ucfirst($_POST['company'] . ' Inventory');
         foreach ($db->query($dbquery) as $row) {
