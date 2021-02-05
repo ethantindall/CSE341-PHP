@@ -13,8 +13,7 @@ main {
 form {
     display: flex;
     flex-direction: column;
-    width: 400px;
-    margin: 25px 0px 10px 25px;
+    margin: 25px 20px 10px 25px;
     border: solid 5px #B084CC;
     padding: 20px; 
 

@@ -39,9 +39,16 @@ $_SESSION["about"] = '<ul>
 
 
 $_SESSION["assignmentList"] = '
+<<<<<<< HEAD
                         <a href="/wk3/index.php"><li class="drop-selector"><h3>Week 3</h3></li></a>
                         <a href="/wk5-team/results.php"><li class="drop-selector"><h3>Week 5 - Team</h3></li></a>
                         <a href="/db-project/index.php"><li class="drop-selector"><h3>Database Project</h3></li></a>
+=======
+                        <a href="/CSE341-PHP/web/wk3/index.php"><li class="drop-selector"><h3>Week 3</h3></li></a>
+                        <a href="/web/wk3/index.php"><li class="drop-selector"><h3>Week 4</h3></li></a>
+                        <a href="/CSE341-PHP/web/wk5-team/index.php"><li class="drop-selector"><h3>Week 5 - Team</h3></li></a>
+                        <a href="https://blooming-ocean-40478.herokuapp.com/wk3/index.php"><li class="drop-selector"><h3>Week 6</h3></li></a>
+>>>>>>> 6eb1972f5f44c8c5381908a029aa962ce9d127b5
 
 '
 
