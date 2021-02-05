@@ -39,35 +39,27 @@ function truefalse($varr) {
 
 function searchresults($company, $searchby, $textinput) {
     $db = connect_to_db();
-    $table = '<tr>
-                    <th>ID</th>
-                    <th>Name</th>   
-                    <th>Quantity</th>
-                    <th>Checked Out</th>
-                ';
+    $table = '';
 
     if ($company == 'strataInventory') {
         $dbquery = 'SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' 
-            . $company . ' WHERE ' . $searchby . " LIKE '%" . $textinput . "%';";
+            . $company . " WHERE item_name  LIKE '%" . $textinput . "%'";
 
-        $table .= '<th>Sticker Number</th></tr>';
         echo ucfirst($_POST['company'] . ' Inventory');
         foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);
             $table .=  '<tr><td>' . $row['item_id'] 
+                . '</td><td>' . $row['item_sticker_id']
                 . '</td><td>' . $row['item_name']  
                 . '</td><td>' . $row['item_quantity']
                 . '</td><td>' . $boolcheckedout
-                . '</td><td>' . $row['item_sticker_id']
                 . '</td></tr>';
         }
         echo $table;
     }
     else if ($company == 'spectraInventory') {
         $dbquery = 'SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' 
-            . $company . ' WHERE ' . $searchby . " LIKE '%" . $textinput . "%';";
-
-        $table .= '<th>Owner</th></tr>';
+        . $company . " WHERE item_name  LIKE '%" . $textinput . "%'";
 
         echo ucfirst($_POST['company'] . ' Inventory');
         foreach ($db->query($dbquery) as $row) {

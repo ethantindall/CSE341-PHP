@@ -46,17 +46,23 @@ require 'connect.php';
             <input id="search" type="submit" value="Search">
         </form>
         
-        <a href="add.php"><button type="button">Add Info to Database</button></a>
+        <button type="button"><a href="add.php">Add Info to Database</a></button>
 
 
         <div class="display-area">
             <table>
-
+                <tr>
+                    <th>ID</th>
+                    <th>Sticker Number</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Checked Out</th>
+                </tr>
             <?php 
                 $company = $_POST['company'] . 'Inventory';
                 $searchby = $_POST['searchBy'];
                 $textinput = $_POST['searchParameters'];
-                echo $searchParameters;
+  
                 searchresults($company, $searchby, $textinput);
 
             ?>          
