@@ -52,12 +52,7 @@ require 'connect.php';
         <div class="display-area">
             <table>
                 <tr>
-                    <th>ID</th>
-                    <th>Sticker Number</th>
-                    <th>Name</th>
-                    <th>Quantity</th>
-                    <th>Checked Out</th>
-                </tr>
+
             <?php 
                 $company = $_POST['company'] . 'Inventory';
                 $searchby = $_POST['searchBy'];
