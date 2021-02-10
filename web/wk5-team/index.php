@@ -38,15 +38,6 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 
 
-include 'form.php';
-
-
-
-
-
-
-
-
 
 
 
