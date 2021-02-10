@@ -14,7 +14,6 @@ $_SESSION['message'] = '';
         include 'add.php';
         break;
     case 'addToDatabase':
-        $_SESSION['message'] = "Data successfully added";
 
         $company = filter_input(INPUT_POST, 'company', FILTER_SANITIZE_STRING);
         $stickerId = filter_input(INPUT_POST, 'stickerId', FILTER_SANITIZE_NUMBER_INT);
@@ -27,6 +26,9 @@ $_SESSION['message'] = '';
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
 
         echo $name;
+        $_SESSION['message'] = "Data successfully added";
+
+        
         include 'add.php';
         break;
     case 'search':

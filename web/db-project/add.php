@@ -36,7 +36,7 @@ session_start();
         }
          ?> 
         <div id="addInfo">
-            <form method="POST" action="index.php">
+            <form method="POST" action="/db-project/index.php">
             <h3>Add Info to Database</h3>
 
             <label>Select company: </label>
