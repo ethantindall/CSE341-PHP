@@ -34,22 +34,26 @@ require 'connect.php';
 <div id="addInfo">
             <form method="POST" action="index.php">
             <h3>Add Info to Database</h3>
-
+            <?php 
+        if (isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+        }
+         ?> 
             <label>Select company: </label>
                 <div>
-                    <input type="radio" name="company" value="strata" onclick="whenwhen('strata')">Strata</input>
-                    <input type="radio" name="company" value="spectra" onclick="whenwhen('spectra')">Spectra</input>
+                    <input type="radio" required name="company" value="strata" onclick="whenwhen('strata')">Strata</input>
+                    <input type="radio" required name="company" value="spectra" onclick="whenwhen('spectra')">Spectra</input>
                 </div>
                 <div id="addform">
                     Sticker ID: <input type="number" id="add-sticker" name="add-sticker"><br>
-                    Name: <input type="text" name="add-name"><br>
-                    Quantity: <input type="number" min="0" max="100" name="add-quantity"><br>
-                    Purchase Date: <input type="date" name="add-purchase-date"><br>
-                    Checked Out:  <input type="radio" name="add-checked-out" value="1">True</input>
-                                  <input type="radio" name="add-checked-out" value="0">False</input><br>
+                    Name: <input required type="text" name="add-name"><br>
+                    Quantity: <input required type="number" min="0" max="100" name="add-quantity"><br>
+                    Purchase Date: <input required type="date" name="add-purchase-date"><br>
+                    Checked Out:  <input required type="radio" name="add-checked-out" value="1">True</input>
+                                  <input required type="radio" name="add-checked-out" value="0">False</input><br>
                         Checked Out Date: <input type="date" name="add-checkout-date"><br>
                         Checked Out By: <input type="text" name="add-checkout-by"><br>
-                    Description: <textarea name="add-description"></textarea>
+                    Description: <textarea required name="add-description"></textarea>
 
                 </div>
 

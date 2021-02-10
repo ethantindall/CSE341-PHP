@@ -15,7 +15,7 @@ $_SESSION['message'] = '';
         break;
     case 'addToDatabase':
         $_SESSION['message'] = "Data successfully added";
-
+        
         include 'add.php';
         break;
     case 'search':
