@@ -9,7 +9,12 @@ require 'connect.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style><?php include "main.css" ?></style>
-    <style><?php include "add.css" ?></style>
+    <style>
+        form {
+            width: 700px;
+            margin: 40px auto;
+        }
+    </style>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
