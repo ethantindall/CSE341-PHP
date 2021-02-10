@@ -16,7 +16,6 @@ require 'connect.php';
 
 <?php 
     try {
-    echo 'hi';
     $db = connect_to_db();
     echo $_POST['book_name'];
     foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures") as $row) {
