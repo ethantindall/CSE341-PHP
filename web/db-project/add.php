@@ -10,7 +10,7 @@ require 'connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style><?php include "main.css" ?></style>
     <style>
-        form {
+        body {
             width: 700px;
             margin: 40px auto;
         }
