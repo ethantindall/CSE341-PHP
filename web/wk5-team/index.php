@@ -33,6 +33,9 @@ switch ($action){
         
         include 'addresults.php';
         break;
+    case 'search':
+        include 'search.php';
+        break;
     default:
         include 'homepage.php';
         break;
