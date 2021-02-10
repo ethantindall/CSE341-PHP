@@ -4,7 +4,6 @@ session_start();
 require 'connect.php';
 
 //connect to database
-connect_to_db();
 
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
