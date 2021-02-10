@@ -13,8 +13,8 @@ require 'connect.php';
 </head>
 <body>
 <h1>SCRIPTURE RESOURCES</h1>
-    <a href="#"><button>Home</button></a>
-    <a href="/wk5-team/index.php/?action="><button>Input</button></a>
+    <a href="/wk5-team/index.php"><button>Home</button></a>
+    <a href="/wk5-team/index.php/?action=insertForm"><button>Input</button></a>
 
 
 <?php 

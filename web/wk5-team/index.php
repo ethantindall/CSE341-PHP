@@ -22,8 +22,8 @@ switch ($action){
     case 'addToDatabase':
         include 'addresults.php';
         break;
-    case 'inputForm':
-        include 'form.php';
+    case 'insertForm':
+        include 'insert.php';
         break;
     default:
         include 'homepage.php';
