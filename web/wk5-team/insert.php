@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <form method="POST" action="/wk5-team/addresults.php">
+    <form method="POST" action="/wk5-team/index.php">
         Book: <input type="text" name="book" id="book">
         Chapter: <input type="text" name="chapter" id="chapter">
         Verse: <input type="text" name="verse" id="verse">

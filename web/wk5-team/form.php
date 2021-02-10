@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <form method="POST" action="results.php">
+    <form method="POST" action="index.php">
         Search by book: <input type="text" name="book_name" id="book">
         <input type="submit" name="submit" id="submit" value="Submit">
     </form>
