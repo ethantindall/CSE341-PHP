@@ -19,6 +19,11 @@ form {
     padding: 20px; 
 
 }
+#add {
+    grid-column: 1;
+    width: 100%;
+    height: 200px;
+}
 .display-area {
     margin: 25px 25px 10px 0px;
     border: solid 5px #B084CC;

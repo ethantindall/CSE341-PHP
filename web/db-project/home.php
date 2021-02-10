@@ -47,7 +47,10 @@ require 'connect.php';
 
         </form>
         
+        <div id="add">
+            <button>Add Data to Database</button>
 
+        </div>
 
         <div class="display-area">
             <table>
