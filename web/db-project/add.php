@@ -1,7 +1,6 @@
 <?php 
 session_start();
 
-require 'connect.php';
 
 ?><!DOCTYPE html>
 <html lang="en-us">
@@ -31,14 +30,15 @@ require 'connect.php';
 
     </header>
         <main>
-<div id="addInfo">
-            <form method="POST" action="index.php">
-            <h3>Add Info to Database</h3>
-            <?php 
+        <?php 
         if (isset($_SESSION['message'])) {
             echo $_SESSION['message'];
         }
          ?> 
+        <div id="addInfo">
+            <form method="POST" action="index.php">
+            <h3>Add Info to Database</h3>
+
             <label>Select company: </label>
                 <div>
                     <input type="radio" required name="company" value="strata" onclick="whenwhen('strata')">Strata</input>
