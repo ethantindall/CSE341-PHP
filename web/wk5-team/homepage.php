@@ -13,8 +13,12 @@ require 'connect.php';
 </head>
 <body>
 <h1>SCRIPTURE RESOURCES</h1>
+    <a href="#"><button>Home</button></a>
+    <a href="/wk5-team/index.php/?action="><button>Input</button></a>
+
 
 <?php 
+
     try {
     $db = connect_to_db();
     echo $_POST['book_name'];
