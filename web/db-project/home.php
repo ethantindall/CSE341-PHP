@@ -48,7 +48,7 @@ require 'connect.php';
         </form>
         
         <div id="add">
-            <button>Add Data to Database</button>
+            <a href="index.php/?action=add"><button>Add Data to Database</button></a>
 
         </div>
 

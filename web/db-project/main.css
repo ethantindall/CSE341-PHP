@@ -21,7 +21,7 @@ form {
 }
 #add {
     grid-column: 1;
-    width: 100%;
+    width: 400px;
     height: 200px;
     margin: 25px 0px 10px 25px;
     border: solid 5px #B084CC;
@@ -39,7 +39,7 @@ form {
     padding-top: 95px;
 }
 
-input[type=submit] {
+input[type=submit], button {
     width: 200px;
     height: 50px;
     background-color: #B084CC;
