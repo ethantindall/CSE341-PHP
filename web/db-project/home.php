@@ -49,6 +49,7 @@ require 'connect.php';
         
         <div id="add">
             <a href="index.php/?action=add"><button>Add Data to Database</button></a>
+            <a href="../index.php"><button>Return to Class Home</button></a>
 
         </div>
 
