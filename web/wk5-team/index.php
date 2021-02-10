@@ -23,6 +23,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         break;
     case 'addToDatabase':
         include 'addresults.php';
+        break;
     default:
         include 'homepage.php';
         break;
