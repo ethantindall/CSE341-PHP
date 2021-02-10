@@ -45,9 +45,10 @@ require 'connect.php';
 >
             <input id="search" type="submit" value="Search">
             <!--<input type="hidden" name="action" value="search">-->
+            <a href="index.php/?action=add"><button type="button">Add Info to Database</button></a>
+
         </form>
         
-        <a href="index.php/?action=add"><button type="button">Add Info to Database</button></a>
 
 
         <div class="display-area">
