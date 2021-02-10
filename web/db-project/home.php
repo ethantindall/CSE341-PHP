@@ -41,11 +41,9 @@ require 'connect.php';
                 <option value="item_storage_location">Location</option>
             </select>
             </div>-->
-            <input type="text" name="searchParameters" <?php if (isset($_POST['searchParameters'])) {echo 'value=' . $_POST['searchParameters'];} ?>
->
+            <input type="text" name="searchParameters" <?php if (isset($_POST['searchParameters'])) {echo 'value=' . $_POST['searchParameters'];} ?>>
             <input id="search" type="submit" value="Search">
             <!--<input type="hidden" name="action" value="search">-->
-            <a href="index.php/?action=add"><button type="button">Add Info to Database</button></a>
 
         </form>
         
