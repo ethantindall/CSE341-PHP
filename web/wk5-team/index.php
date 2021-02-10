@@ -4,7 +4,7 @@ session_start();
 
 
 //connect to database
-connect_to_db();
+//connect_to_db();
 
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
@@ -12,7 +12,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
  }
 
- switch ($action){
+switch ($action){
     case 'results': 
         $_SESSION['book'] = filter_input(INPUT_GET, 'book', FILTER_SANITIZE_STRING);
         $_SESSION['chapter'] = filter_input(INPUT_GET, 'chapter', FILTER_VALIDATE_INT);
