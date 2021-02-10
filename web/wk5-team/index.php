@@ -19,13 +19,18 @@ switch ($action){
 
         include 'results.php';
         break;
-    case 'addToDatabase':
-        include 'addresults.php';
-        break;
     case 'insertForm':
         include 'insert.php';
         break;
     case 'addToDatabase':
+
+        $_SESSION['book'] = filter_input(INPUT_GET, 'book', FILTER_SANITIZE_STRING);
+        $_SESSION['chapter'] = filter_input(INPUT_GET, 'chapter', FILTER_VALIDATE_INT);
+        $_SESSION['verse'] = filter_input(INPUT_GET, 'verse', FILTER_VALIDATE_INT);
+        $_SESSION['content'] = filter_input(INPUT_GET, 'content', FILTER_SANITIZE_STRING);
+
+        echo $_SESSION['book'];
+        
         include 'addresults.php';
         break;
     default:

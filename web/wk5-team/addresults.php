@@ -15,26 +15,7 @@ require 'connect.php';
 </head>
 <body>
 
-
-    <?php echo $_POST['book']; ?>
-
-
-    <?php 
-
-    $query = "INSERT INTO scriptures(book, chapter, verse, content) VALUES ('{$_POST['book']}', 
-                                                                            '{$_POST['chapter']}',
-                                                                            '{$_POST['verse']}',
-                                                                            '{$_POST['content']}')";
-                                                               
-    try {
-    $db = connect_to_db();
-    $db->query($query);
-    }
-    catch (PDOException $e) {
-        echo 'Error!: Promote the Gold Database';
-        die();
-}
-?>
+Add results page
 
 </body>
 </html>
