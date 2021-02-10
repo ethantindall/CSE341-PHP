@@ -24,13 +24,13 @@ switch ($action){
         break;
     case 'addToDatabase':
 
-        $_POST['book'] = filter_input(INPUT_GET, 'book', FILTER_SANITIZE_STRING);
-        $_POST['chapter'] = filter_input(INPUT_GET, 'chapter', FILTER_VALIDATE_INT);
-        $_POST['verse'] = filter_input(INPUT_GET, 'verse', FILTER_VALIDATE_INT);
-        $_POST['content'] = filter_input(INPUT_GET, 'content', FILTER_SANITIZE_STRING);
+        $_SESSION['book'] = filter_input(INPUT_GET, 'book', FILTER_SANITIZE_STRING);
+        $_SESSION['chapter'] = filter_input(INPUT_GET, 'chapter', FILTER_VALIDATE_INT);
+        $_SESSION['verse'] = filter_input(INPUT_GET, 'verse', FILTER_VALIDATE_INT);
+        $_SESSION['content'] = filter_input(INPUT_GET, 'content', FILTER_SANITIZE_STRING);
 
-        echo $_POST['book'];
-
+        echo $_SESSION['book'];
+        
         include 'addresults.php';
         break;
     default:
