@@ -2,30 +2,9 @@
 
 session_start();
 
+require 'connect.php';
 
-//connect to database
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
-
-  $dbOpts = parse_url($dbUrl);
-
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-
+$db = connect_to_db();
 
 
 //create variable to echo
@@ -38,26 +17,21 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 
 
-include 'form.php';
-
-
-
-
-
-
-
-
-
-
-
-
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     if ($action == NULL){
         $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
  }
 
  switch ($action){
-      case 'addtoDatabase':
+    case 'results': 
+        $_SESSION['book'] = filter_input(INPUT_GET, 'book', FILTER_SANITIZE_STRING);
+        $_SESSION['chapter'] = filter_input(INPUT_GET, 'chapter', FILTER_VALIDATE_INT);
+        $_SESSION['verse'] = filter_input(INPUT_GET, 'verse', FILTER_VALIDATE_INT);
+        $_SESSION['content'] = filter_input(INPUT_GET, 'content', FILTER_SANITIZE_STRING);
+
+        include 'results.php';
+        break;
+    case 'addtoDatabase':
         $_SESSION['book'] = filter_input(INPUT_GET, 'book', FILTER_SANITIZE_STRING);
         $_SESSION['chapter'] = filter_input(INPUT_GET, 'chapter', FILTER_VALIDATE_INT);
         $_SESSION['verse'] = filter_input(INPUT_GET, 'verse', FILTER_VALIDATE_INT);
