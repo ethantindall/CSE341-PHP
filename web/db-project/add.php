@@ -55,6 +55,9 @@ require 'connect.php';
 
 
                 <input id="search" type="submit" value="Add to DB">
+                <input type="hidden" name="action" value="addToDatabase">
+                <a href="index.php"><button>Return to Home</button></a>
+
             </form>
         </div>
         <script src="script.js"></script>
