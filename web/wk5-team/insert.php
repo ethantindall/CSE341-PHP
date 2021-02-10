@@ -15,7 +15,7 @@
         Content: <input type="text" name="content" id="content">
 
         <input type="submit" name="submit" id="submit" value="Submit">
-        <input required type="hidden" name="action" value="addtoDatabase">
+        <input required type="hidden" name="action" value="addToDatabase">
     </form>
 </body>
 </html>
