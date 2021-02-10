@@ -9,6 +9,7 @@
 </head>
 <body>
 
-HI
+    <?php echo $_POST['book']; ?>
+
 </body>
 </html>
