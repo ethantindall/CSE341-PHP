@@ -10,7 +10,7 @@ require 'connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style><?php include "main.css" ?></style>
     <style>
-        body {
+        main {
             width: 700px;
             margin: 40px auto;
         }
@@ -30,7 +30,7 @@ require 'connect.php';
         <div class="bar bottombar"></div>
 
     </header>
-
+        <main>
 <div id="addInfo">
             <form method="POST" action="index.php">
             <h3>Add Info to Database</h3>
@@ -61,5 +61,6 @@ require 'connect.php';
             <a href="/db-project/index.php/?action=search"><button>Return to Home</button></a>
 
         </div>
+        </main>
         <script src="script.js"></script>
 </body></html>
