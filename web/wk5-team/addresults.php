@@ -25,7 +25,15 @@ require 'connect.php';
                                                                             '{$_POST['chapter']}',
                                                                             '{$_POST['verse']}',
                                                                             '{$_POST['content']}')";
-                                                                            
+                                                               
+    try {
+    $db = connect_to_db();
+    $db->query($query);
+    }
+    catch (PDOException $e) {
+        echo 'Error!: Promote the Gold Database';
+        die();
+}
 ?>
 
 </body>
