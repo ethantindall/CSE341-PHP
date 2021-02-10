@@ -22,7 +22,7 @@ form {
 #add {
     grid-column: 1;
     width: 400px;
-    height: 200px;
+    height: 150px;
     margin: 25px 0px 10px 25px;
     border: solid 5px #B084CC;
     padding: 20px; 
@@ -48,7 +48,9 @@ input[type=submit], button {
     clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%);
 
 }
-
+button {
+    margin-bottom: 20px;
+}
 form input {
     margin: 10px 10px 10px 0;
 }
