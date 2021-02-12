@@ -24,6 +24,7 @@ require 'connect.php';
     </header>
 
     <main>
+    <?php if (isset($_SESSION['message'])) { echo $_SESSION['message']; } ?> 
 
         <form method="POST" action="index.php">
             <div>
