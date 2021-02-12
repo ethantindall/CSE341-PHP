@@ -18,7 +18,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $c
     $stmt = $db->prepare($query);
     echo $query;
 
-/*
+
     $stmt->bindValue(':company', $company, PDO::PARAM_INT);
     $stmt->bindValue(':sticker', $stickerId, PDO::PARAM_INT);
     $stmt->bindValue(':iname', $name, PDO::PARAM_STR);
@@ -29,8 +29,8 @@ function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $c
     $stmt->bindValue(':checkdate', $checkedOutDate, PDO::PARAM_INT);
     $stmt->bindValue(':checkby', $checkedOutBy, PDO::PARAM_INT);
     
-    $stmt->execute();
-*/
+    //$stmt->execute();
+
 }
 
 
