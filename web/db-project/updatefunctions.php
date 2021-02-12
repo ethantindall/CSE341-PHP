@@ -2,21 +2,23 @@
 
 function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $checkedOut, $checkedOutDate, $checkedOutBy, $description) {
     if ($company == 'strata') {
-        $query = 'INSERT INTO :company (item_sticker_id, item_name, item_description, item_quantity, item_storage_location,
-        item_purchase_date, item_checked_out, item_checked_out_date, item_checked_out_by) 
-        VALUES (:sticker, :iname, :idesc, :quantity, 0, :purchase, :icheck, :checkdate, :checkby)';
+        $query = 'INSERT INTO :company (item_sticker_id, item_name, item_description, 
+                                        item_quantity, item_storage_location, item_purchase_date,
+                                        item_checked_out, item_checked_out_date, item_checked_out_by) 
+                VALUES (:sticker, :iname, :idesc, :quantity, 0, :purchase, :icheck, :checkdate, :checkby)';
     }
     if ($company == 'spectra') {
         $query = 'INSERT INTO :company (item_sticker_id, item_name, item_description, item_quantity
         item_purchase_date, item_checked_out, item_checked_out_date, item_checked_out_by) 
         VALUES (:sticker, :name, :desc, :quantity, :purchase, :check, :checkdate, :checkby)';
     }
-    echo $query;
-/*
+
     $db = connectToDB(); 
 
     $stmt = $db->prepare($query);
+    echo $query;
 
+/*
     $stmt->bindValue(':company', $company, PDO::PARAM_INT);
     $stmt->bindValue(':sticker', $stickerId, PDO::PARAM_INT);
     $stmt->bindValue(':iname', $name, PDO::PARAM_STR);
