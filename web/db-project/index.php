@@ -26,7 +26,7 @@ $_SESSION['message'] = '';
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
 
         echo $name;
-        $_SESSION['message'] = "Data successfully added";
+        $_SESSION['message'] = $name;
 
         
         include 'add.php';
