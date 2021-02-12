@@ -33,10 +33,10 @@ $_SESSION['message'] = '';
         $company = filter_input(INPUT_POST, 'sCompany', FILTER_SANITIZE_STRING);
         $company = $company . 'Inventory';
 
-        searchresults($company, $name);
+        $_SESSION['results'] = searchresults($company, $name);
 
 
-        include 'home.php';
+        include 'table.php';
         break;
     default:
         include 'home.php';

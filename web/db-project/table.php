@@ -23,7 +23,8 @@ session_start();
         <div class="display-area">
             <table>
 
-    
+            <?php if (isset($_SESSION['results'])) { echo $_SESSION['results']; } ?> 
+
             
             </table>
         </div>
