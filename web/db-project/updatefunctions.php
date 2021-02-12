@@ -11,8 +11,8 @@ function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $c
         item_purchase_date, item_checked_out, item_checked_out_date, item_checked_out_by) 
         VALUES (:sticker, :name, :desc, :quantity, :purchase, :check, :checkdate, :checkby)';
     }
-
-
+    echo $query;
+/*
     $db = connectToDB(); 
 
     $stmt = $db->prepare($query);
@@ -28,7 +28,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $c
     $stmt->bindValue(':checkby', $checkedOutBy, PDO::PARAM_INT);
     
     $stmt->execute();
-
+*/
 }
 
 
