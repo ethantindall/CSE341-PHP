@@ -24,7 +24,8 @@ $_SESSION['message'] = '';
         $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
 
 
-        $_SESSION['results'] = addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
+        addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
+        
 
 
         include 'home.php';

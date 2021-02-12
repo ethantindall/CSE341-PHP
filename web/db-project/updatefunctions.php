@@ -98,7 +98,6 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
                                     item_checked_out, item_checked_out_by) 
             VALUES (:sticker, :iname, :idesc, :quantity, 1, :icheck, :checkby)';
 
-    echo $query;
     $db = connectToDB(); 
 
     $stmt = $db->prepare($query);
