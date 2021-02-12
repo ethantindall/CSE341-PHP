@@ -1,6 +1,8 @@
 <?php
 
 
+/*
+
 //connect to database
 function connect_to_db() {
     try {
@@ -124,6 +126,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $c
     //    $stmt->execute();
 
 }
-
+*/
+echo 'hi';
 
 ?>
