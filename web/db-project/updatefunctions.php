@@ -97,7 +97,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     $db = connectToDB(); 
 
     $sql = 'INSERT INTO :com (item_sticker_id, item_name, item_description, item_quantity, item_storage_location, item_checked_out, item_checked_out_by) 
-            VALUES (:sticker, :iname, :idesc, :quantity, 1, :icheck, :checkby)';
+            VALUES (:sticker, :iname, :idesc, :quantity, 1, :icheck, 1)';
 
 
     $stmt = $db->prepare($sql);
