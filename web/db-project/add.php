@@ -24,7 +24,8 @@ session_start();
         }
         function checkDisable(x){
             if (x == 0) {document.getElementById("add-checkout-by").disabled = false;}
-            if (x == 1) {document.getElementById("add-checkout-by").disabled = true;}
+            if (x == 1) {document.getElementById("add-checkout-by").disabled = true;
+                        document.getElementById("add-checkout-by").value = 'NULL';}
         }
     </script>
 
