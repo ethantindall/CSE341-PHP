@@ -93,6 +93,7 @@ function searchresults($company, $textinput) {
 
 
 function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description) {
+    try {
     $db = connectToDB(); 
 
     $sql = 'INSERT INTO :com (item_sticker_id, item_name, item_description, item_quantity, item_storage_location, item_checked_out, item_checked_out_by) 
@@ -110,7 +111,9 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     $stmt->bindValue(':checkby', $checkedOutBy);
     
     
-    $stmt->execute();
-    echo '1';
+    $stmt->execute();}
+    catch (PDOException $e) {
+            echo 'error';
+    }
 }
 ?>
