@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-//require 'connect.php';
+require 'connect.php';
 
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
@@ -27,25 +27,7 @@ $_SESSION['message'] = '';
         $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by', FILTER_SANITIZE_STRING);
         $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
 
-        $query = 'INSERT INTO :company (item_sticker_id, item_name, item_description, item_quantity
-                                        item_purchase_date, item_checked_out, item_checked_out_date, item_checked_out_by) 
-                    VALUES (:sticker, :name, :desc, :quantity, :purchase, :check, :checkdate, :checkby)';
-
-         //   $db = connect_to_db(); 
-
-        /*    $stmt = $db->prepare($query);
-
-            $stmt->bindValue(':company', $company, PDO::PARAM_INT);
-            $stmt->bindValue(':sticker', $stickerId, PDO::PARAM_INT);
-            $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-            $stmt->bindValue(':quantity', $quantity, PDO::PARAM_INT);
-            $stmt->bindValue(':purchase', $classificationId, PDO::PARAM_INT);
-            $stmt->bindValue(':check', $classificationId, PDO::PARAM_INT);
-            $stmt->bindValue(':checkdate', $classificationId, PDO::PARAM_INT);
-            $stmt->bindValue(':checkby', $classificationId, PDO::PARAM_INT);
-            $stmt->bindValue(':desc', $description, PDO::PARAM_INT);
-*/
-        //    $stmt->execute();
+        //addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $checkedOut, $checkedOutDate, $checkedOutBy, $description);
 
         include 'home.php';
         break;
