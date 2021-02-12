@@ -26,10 +26,10 @@ $_SESSION['message'] = '';
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
 
         echo $name;
-        $_SESSION['message'] = $name;
+        $_SESSION['message'] = 'name: ' .$name;
 
         
-        include 'add.php';
+        include 'home.php';
         break;
     case 'search':
 

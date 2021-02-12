@@ -30,11 +30,7 @@ session_start();
 
     </header>
         <main>
-        <?php 
-        if (isset($_SESSION['message'])) {
-            echo $_SESSION['message'];
-        }
-         ?> 
+        <?php if (isset($_SESSION['message'])) { echo $_SESSION['message']; } ?> 
         <div id="addInfo">
             <form method="POST" action="/db-project/index.php">
             <h3>Add Info to Database</h3>
