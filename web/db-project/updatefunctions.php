@@ -140,7 +140,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
         $db = connectToDB(); 
     
         $sql = "INSERT INTO spectraInventory (item_name, item_description, item_quantity, item_storage_location, item_owner, item_checked_out, item_checked_out_by) 
-                VALUES (:iname, :idesc, :quantity, 1, 'Company', :icheck, NULL)";
+                VALUES (:iname, :idesc, :quantity, 1, 'Company', :icheck, :checkby)";
     
     
         $stmt = $db->prepare($sql);
@@ -149,7 +149,8 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
         $stmt->bindValue(':idesc', $description);
         $stmt->bindValue(':quantity', $quantity);
         $stmt->bindValue(':icheck', $checkedOut);
-        
+        $stmt->bindValue(':checkby', $checkedOutBy);
+
         
         $stmt->execute();
     }
