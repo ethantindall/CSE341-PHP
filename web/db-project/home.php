@@ -41,6 +41,17 @@ session_start();
 
         </div>
 
+        <div class="display-area">
+            <table>
+
+    
+            <?php if (isset($_SESSION['results'])) { echo $_SESSION['results']; } ?> 
+
+        
+            
+            </table>
+        </div>
+
     </main>
     <script src="script.js"></script>
 </body>

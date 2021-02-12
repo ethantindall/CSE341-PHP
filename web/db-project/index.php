@@ -36,7 +36,7 @@ $_SESSION['message'] = '';
         $_SESSION['results'] = searchresults($company, $name);
 
 
-        include 'table.php';
+        include 'home.php';
         break;
     default:
         include 'home.php';
