@@ -13,7 +13,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $c
     }
 
 
-    $db = connect_to_db(); 
+    $db = connectToDB(); 
 
     $stmt = $db->prepare($query);
 
@@ -27,7 +27,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $c
     $stmt->bindValue(':checkby', $checkedOutBy, PDO::PARAM_INT);
     $stmt->bindValue(':desc', $description, PDO::PARAM_INT);
     
-    //    $stmt->execute();
+    $stmt->execute();
 
 }
 
