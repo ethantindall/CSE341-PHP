@@ -96,7 +96,8 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
         $query = "INSERT INTO strataInventory (item_sticker_id, item_name, item_description, 
                                         item_quantity, item_storage_location,
                                         item_checked_out, item_checked_out_by) 
-                VALUES ('1000', 'Hi', 'test', 1, 0, FALSE, 0)";
+                VALUES ('" . $stickerId . "', '" . $name . "', '" . $description . "', '"
+                         . $quantity . "', 1, '" . $checkedOut . "', '" . $checkedOutBy ."')";
 
     $db = connectToDB(); 
     echo $query;
