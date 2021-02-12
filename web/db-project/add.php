@@ -17,7 +17,11 @@ session_start();
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
+    <script>
+    function when(x) {
+    console.log('hi');
+}
+    </script>
 
     <title>Strata SHIP</title>
 
