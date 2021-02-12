@@ -93,14 +93,13 @@ function searchresults($company, $textinput) {
 
 
 function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description) {
-    $query = 'INSERT INTO :com (item_sticker_id, item_name, item_description, 
-                                    item_quantity, item_storage_location,
-                                    item_checked_out, item_checked_out_by) 
-            VALUES (:sticker, :iname, :idesc, :quantity, 1, :icheck, :checkby)';
-
     $db = connectToDB(); 
 
-    $stmt = $db->prepare($query);
+    $sql = 'INSERT INTO :com (item_sticker_id, item_name, item_description, item_quantity, item_storage_location, item_checked_out, item_checked_out_by) 
+            VALUES (:sticker, :iname, :idesc, :quantity, 1, :icheck, :checkby)';
+
+
+    $stmt = $db->prepare($sql);
 
     $stmt->bindValue(':com', $company);
     $stmt->bindValue(':sticker', $stickerId);
@@ -112,6 +111,6 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     
     
     $stmt->execute();
-
+    echo '1';
 }
 ?>
