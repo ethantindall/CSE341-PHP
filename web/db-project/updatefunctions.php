@@ -93,26 +93,24 @@ function searchresults($company, $textinput) {
 
 
 function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description) {
-        $query = "INSERT INTO " . $company . " (item_sticker_id, item_name, item_description, 
-                                        item_quantity, item_storage_location,
-                                        item_checked_out, item_checked_out_by) 
-                VALUES (" . $stickerId . ", '" . $name . "', '" . $description . "', "
-                         . $quantity . ", 1, " . $checkedOut . ", '" . $checkedOutBy ."')";
+    $query = 'INSERT INTO :com (item_sticker_id, item_name, item_description, 
+                                    item_quantity, item_storage_location,
+                                    item_checked_out, item_checked_out_by) 
+            VALUES (:sticker, :iname, :idesc, :quantity, 1, :icheck, :checkby)';
 
     echo $query;
     $db = connectToDB(); 
 
     $stmt = $db->prepare($query);
 
-/*
-    $stmt->bindValue(':company', $company, PDO::PARAM_STR);
-    $stmt->bindValue(':sticker', $stickerId, PDO::PARAM_INT);
-    $stmt->bindValue(':iname', $name, PDO::PARAM_STR);
-    $stmt->bindValue(':idesc', $description, PDO::PARAM_STR);
-    $stmt->bindValue(':quantity', $quantity, PDO::PARAM_INT);
-    $stmt->bindValue(':icheck', $checkedOut, PDO::PARAM_BOOL);
-    $stmt->bindValue(':checkby', $checkedOutBy, PDO::PARAM_INT);
-    */
+    $stmt->bindValue(':com', $company);
+    $stmt->bindValue(':sticker', $stickerId);
+    $stmt->bindValue(':iname', $name);
+    $stmt->bindValue(':idesc', $description);
+    $stmt->bindValue(':quantity', $quantity);
+    $stmt->bindValue(':icheck', $checkedOut);
+    $stmt->bindValue(':checkby', $checkedOutBy);
+    
     
     $stmt->execute();
 

@@ -1,6 +1,6 @@
 <?php
 
-
+/*
 //connect to database
 function connect_to_db() {
     try {
