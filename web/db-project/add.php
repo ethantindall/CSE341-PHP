@@ -46,8 +46,12 @@ session_start();
                     Quantity: <input required type="number" min="0" max="100" name="add-quantity"><br>
                     Checked Out:  <input required type="radio" name="add-checked-out" value="TRUE">True</input>
                                   <input required type="radio" name="add-checked-out" value="FALSE">False</input><br>
-                        Checked Out By: <input type="text" name="add-checkout-by"><br>
-                    Description: <textarea required name="add-description"></textarea>
+                        Checked Out By:  <select id="add-checkout-by" name="add-checkout-by">
+                                            <option value="1">Ethan</option>
+                                            <option value="2">James</option>
+                                            <option value="3">Steve</option>
+                                        </select>
+                        Description: <textarea required name="add-description"></textarea>
 
                 </div>
 

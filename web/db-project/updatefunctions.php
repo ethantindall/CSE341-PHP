@@ -39,7 +39,7 @@ function searchresults($company, $textinput) {
     $table = '';
 
     if ($company == 'strataInventory') {
-        $dbquery = 'SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' 
+        $dbquery = 'SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out, item_checked_out_by FROM ' 
             . $company . " WHERE item_name  LIKE '%" . $textinput . "%'";
             $table .= 'Strata Inventory';
 
@@ -49,6 +49,7 @@ function searchresults($company, $textinput) {
                     <th>Name</th>
                     <th>Quantity</th>
                     <th>Checked Out</th>
+                    <th>Checked Out By</th>
                 </tr>';
         foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);
@@ -57,7 +58,9 @@ function searchresults($company, $textinput) {
                 . '</td><td>' . $row['item_name']  
                 . '</td><td>' . $row['item_quantity']
                 . '</td><td>' . $boolcheckedout
+                . '</td><td>' . $row['item_checked_out_by']
                 . '</td></tr>';
+
         }
         return $table;
     }
@@ -99,7 +102,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     $db = connectToDB(); 
 
     $sql = 'INSERT INTO strataInventory (item_sticker_id, item_name, item_description, item_quantity, item_storage_location, item_checked_out, item_checked_out_by) 
-            VALUES (:sticker, :iname, :idesc, :quantity, 1, :icheck, 1)';
+            VALUES (:sticker, :iname, :idesc, :quantity, 1, :icheck, :checkby)';
 
 
     $stmt = $db->prepare($sql);
@@ -110,7 +113,8 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     $stmt->bindValue(':idesc', $description);
     $stmt->bindValue(':quantity', $quantity);
     $stmt->bindValue(':icheck', $checkedOut);
-    
+    $stmt->bindValue(':checkby', $checkedOutBy);
+
     
     $stmt->execute();
     }
