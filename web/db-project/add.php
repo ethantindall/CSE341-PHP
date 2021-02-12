@@ -38,8 +38,8 @@ session_start();
 
             <label>Select company: </label>
                 <div>
-                    <input type="radio" required name="add-company" value="strataInventory" onclick="when('strata')">Strata</input>
-                    <input type="radio" required name="add-company" value="spectraInventory" onclick="when('spectra')">Spectra</input>
+                    <input type="radio" required name="add-company" value="strataInventory" onclick="when(0)">Strata</input>
+                    <input type="radio" required name="add-company" value="spectraInventory" onclick="when(1)">Spectra</input>
                 </div>
                 <div id="addform">
                     Sticker ID: <input type="number" id="add-sticker" name="add-sticker"><br>
