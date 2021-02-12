@@ -20,8 +20,8 @@ $_SESSION['message'] = '';
         $stickerId = filter_input(INPUT_POST, 'add-sticker', FILTER_SANITIZE_NUMBER_INT);
         $name = filter_input(INPUT_POST, 'add-name', FILTER_SANITIZE_STRING);
         $quantity = filter_input(INPUT_POST, 'add-quantity', FILTER_SANITIZE_NUMBER_INT);
-        $checkedOut = filter_input(INPUT_POST, 'add-checked-out', FILTER_SANITIZE_STRING);
-        $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by', FILTER_SANITIZE_STRING);
+        $checkedOut = filter_input(INPUT_POST, 'add-checked-out');
+        $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by');
         $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
 
         addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
@@ -31,8 +31,9 @@ $_SESSION['message'] = '';
     case 'search':
         $name = filter_input(INPUT_POST, 'sName', FILTER_SANITIZE_STRING);
         $company = filter_input(INPUT_POST, 'sCompany', FILTER_SANITIZE_STRING);
+        $company = $company . 'Inventory';
 
-         searchresults($company, $name);
+        searchresults($company, $name);
 
 
         include 'home.php';
