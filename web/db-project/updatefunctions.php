@@ -111,7 +111,8 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     $stmt->bindValue(':checkby', $checkedOutBy);
     
     
-    $stmt->execute();}
+    $stmt->execute();
+}
     catch (PDOException $e) {
             echo 'error';
     }

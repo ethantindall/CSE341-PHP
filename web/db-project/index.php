@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once 'updatefunctions.php';
+require 'updatefunctions.php';
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     if ($action == NULL){
@@ -25,7 +25,7 @@ $_SESSION['message'] = '';
 
 
         addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
-        
+
 
 
         include 'home.php';
