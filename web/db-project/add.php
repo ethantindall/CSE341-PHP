@@ -16,8 +16,9 @@ session_start();
     </style>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-
     <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+
     <title>Strata SHIP</title>
 
 </head>
@@ -37,8 +38,8 @@ session_start();
 
             <label>Select company: </label>
                 <div>
-                    <input type="radio" required name="add-company" value="strataInventory" onclick="whenwhen('strata')">Strata</input>
-                    <input type="radio" required name="add-company" value="spectraInventory" onclick="whenwhen('spectra')">Spectra</input>
+                    <input type="radio" required name="add-company" value="strataInventory" onclick="when('strata')">Strata</input>
+                    <input type="radio" required name="add-company" value="spectraInventory" onclick="when('spectra')">Spectra</input>
                 </div>
                 <div id="addform">
                     Sticker ID: <input type="number" id="add-sticker" name="add-sticker"><br>
@@ -63,7 +64,6 @@ session_start();
             <a href="/db-project/index.php"><button>Return to Home</button></a>
 
         </div>
-        <script src="script.js"></script>
 
         </main>
 </body></html>
