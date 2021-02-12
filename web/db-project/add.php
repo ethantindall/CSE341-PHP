@@ -18,9 +18,19 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
     <script>
-    function when(x) {
-    console.log('hi');
-}
+        function when(x) {
+            if (x == 0) {
+                document.getElementById('add-sticker').disabled= false;
+                console.log(x + "yeah");
+            }
+            else if (x == 1) {
+                document.getElementById('add-sticker').disabled= true;
+                console.log(x + "ok");
+            }
+            else {
+                console.log("uh-oh");
+            }
+        }
     </script>
 
     <title>Strata SHIP</title>
