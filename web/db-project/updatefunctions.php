@@ -33,7 +33,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $c
 
 
 
-function connect_to_db() {
+function connectToDB() {
     try {
         $dbUrl = getenv('DATABASE_URL');
 
