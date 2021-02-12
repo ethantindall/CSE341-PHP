@@ -1,5 +1,5 @@
 <?php
-
+/*
 //connect to database
 function connect_to_db() {
     try {
@@ -24,7 +24,7 @@ function connect_to_db() {
         echo 'Error!: ' . $e->getMessage();
         die();
     }
-}
+}*/
 
 /*
 function truefalse($varr) {
