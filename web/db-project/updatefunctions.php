@@ -94,6 +94,8 @@ function searchresults($company, $textinput) {
 
 function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description) {
     try {
+
+    if ($company == 'strataInventory') {
     $db = connectToDB(); 
 
     $sql = 'INSERT INTO strataInventory (item_sticker_id, item_name, item_description, item_quantity, item_storage_location, item_checked_out, item_checked_out_by) 
@@ -111,7 +113,25 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     
     
     $stmt->execute();
-}
+    }
+    if ($company == 'spectraInventory') {
+        $db = connectToDB(); 
+    
+        $sql = "INSERT INTO spectraInventory (item_name, item_description, item_quantity, item_storage_location, item_owner, item_checked_out, item_checked_out_by) 
+                VALUES (:iname, :idesc, :quantity, 1, 'Company', :icheck, NULL)";
+    
+    
+        $stmt = $db->prepare($sql);
+    
+        $stmt->bindValue(':iname', $name);
+        $stmt->bindValue(':idesc', $description);
+        $stmt->bindValue(':quantity', $quantity);
+        $stmt->bindValue(':icheck', $checkedOut);
+        
+        
+        $stmt->execute();
+    }
+    }
     catch (PDOException $e) {
             echo 'error: ' . $e ;
     }
