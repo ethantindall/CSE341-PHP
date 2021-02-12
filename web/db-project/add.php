@@ -19,19 +19,12 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
     <script>
         function when(x) {
-            if (x == 0) {
-                document.getElementById('add-sticker').disabled= false;
-            }
-            else if (x == 1) {
-                document.getElementById('add-sticker').disabled= true;
-            }
-            else {
-                console.log("JS Error");
-            }
+            if (x == 0) {document.getElementById('add-sticker').disabled= false;}
+            if (x == 1) {document.getElementById('add-sticker').disabled= true;}
         }
         function checkDisable(x){
-            if (x == 'TRUE') {document.getElementById("add-checkout-by").disabled = false;}
-            if (x == 'FALSE') {document.getElementById("add-checkout-by").disabled = true;}
+            if (x == 0) {document.getElementById("add-checkout-by").disabled = false;}
+            if (x == 1) {document.getElementById("add-checkout-by").disabled = true;}
         }
     </script>
 
