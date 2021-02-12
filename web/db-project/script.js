@@ -2,6 +2,7 @@ function dropedit() {
     $dropdown = document.getElementById('searchBy');
 
 }
+
 function whenwhen(x) {
     if (x == 'strata') {
         document.getElementById('add-sticker').disabled= false;

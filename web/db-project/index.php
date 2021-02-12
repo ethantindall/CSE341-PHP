@@ -8,7 +8,7 @@ $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
         $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
  }
 
-$_SESSION['message'] = '';
+$_SESSION['results'] = '';
 
  switch ($action){
     case 'add': 

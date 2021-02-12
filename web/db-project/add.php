@@ -63,6 +63,7 @@ session_start();
             <a href="/db-project/index.php"><button>Return to Home</button></a>
 
         </div>
-        </main>
         <script src="script.js"></script>
+
+        </main>
 </body></html>
