@@ -67,13 +67,13 @@ function searchresults($company, $textinput) {
         foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);
             $staff = getStaff($row['item_checked_out_by']);
-            $table .=  '<tr><td>' . $row['item_id'] 
+            $table .=  '<a href="index.php/?pullStrataItem='. $row['item_id'] . '"><tr><td>' . $row['item_id'] 
                 . '</td><td>' . $row['item_sticker_id']
                 . '</td><td>' . $row['item_name']  
                 . '</td><td>' . $row['item_quantity']
                 . '</td><td>' . $boolcheckedout
                 . '</td><td>' . $staff
-                . '</td></tr>';
+                . '</td></tr></a>';
 
         }
         return $table;
@@ -96,13 +96,13 @@ function searchresults($company, $textinput) {
             $boolcheckedout = truefalse($row['item_checked_out']);
             $staff = getStaff($row['item_checked_out_by']);
 
-            $table .=  '<tr><td>' . $row['item_id'] 
+            $table .=  '<a href="index.php/?pullSpectraItem='. $row['item_id'] . '"><tr><td>' . $row['item_id'] 
                 . '</td><td>' . $row['item_name']  
                 . '</td><td>' . $row['item_quantity']
                 . '</td><td>' . $row['item_owner']
                 . '</td><td>' . $boolcheckedout
                 . '</td><td>' . $staff
-                . '</td></tr>';
+                . '</td></tr></a>';
         }
         return $table;
     }
