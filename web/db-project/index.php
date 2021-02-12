@@ -32,9 +32,9 @@ $_SESSION['message'] = '';
                                         item_purchase_date, item_checked_out, item_checked_out_date, item_checked_out_by) 
                     VALUES (:sticker, :name, :desc, :quantity, :purchase, :check, :checkdate, :checkby)';
 
-            $db = connect_to_db(); 
+         //   $db = connect_to_db(); 
 
-            $stmt = $db->prepare($query);
+        /*    $stmt = $db->prepare($query);
 
             $stmt->bindValue(':company', $company, PDO::PARAM_INT);
             $stmt->bindValue(':sticker', $stickerId, PDO::PARAM_INT);
@@ -45,8 +45,8 @@ $_SESSION['message'] = '';
             $stmt->bindValue(':checkdate', $classificationId, PDO::PARAM_INT);
             $stmt->bindValue(':checkby', $classificationId, PDO::PARAM_INT);
             $stmt->bindValue(':desc', $description, PDO::PARAM_INT);
-
-            $stmt->execute();
+*/
+        //    $stmt->execute();
 
         include 'home.php';
         break;
