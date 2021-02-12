@@ -108,7 +108,6 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     $stmt->bindValue(':idesc', $description);
     $stmt->bindValue(':quantity', $quantity);
     $stmt->bindValue(':icheck', $checkedOut);
-    $stmt->bindValue(':checkby', $checkedOutBy);
     
     
     $stmt->execute();
