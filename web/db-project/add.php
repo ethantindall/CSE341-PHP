@@ -21,15 +21,17 @@ session_start();
         function when(x) {
             if (x == 0) {
                 document.getElementById('add-sticker').disabled= false;
-                console.log(x + "yeah");
             }
             else if (x == 1) {
                 document.getElementById('add-sticker').disabled= true;
-                console.log(x + "ok");
             }
             else {
-                console.log("uh-oh");
+                console.log("JS Error");
             }
+        }
+        function checkDisable(x){
+            if (x == 'TRUE') {document.getElementById("add-checkout-by").disabled = false;}
+            if (x == 'FALSE') {document.getElementById("add-checkout-by").disabled = true;}
         }
     </script>
 
