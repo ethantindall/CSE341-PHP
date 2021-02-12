@@ -20,12 +20,13 @@ session_start();
     <script>
         function when(x) {
             if (x == 0) {document.getElementById('add-sticker').disabled= false;}
-            if (x == 1) {document.getElementById('add-sticker').disabled= true;}
+            if (x == 1) {document.getElementById('add-sticker').disabled= true;
+                         document.getElementById('add-sticker').value = "";}
         }
         function checkDisable(x){
             if (x == 0) {document.getElementById("add-checkout-by").disabled = false;}
             if (x == 1) {document.getElementById("add-checkout-by").disabled = true;
-                        document.getElementById("add-checkout-by").value = 'NULL';}
+                         document.getElementById("add-checkout-by").value = 'NULL';}
         }
     </script>
 
