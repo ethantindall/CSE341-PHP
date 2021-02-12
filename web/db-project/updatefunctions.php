@@ -41,8 +41,9 @@ function searchresults($company, $textinput) {
     if ($company == 'strataInventory') {
         $dbquery = 'SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out FROM ' 
             . $company . " WHERE item_name  LIKE '%" . $textinput . "%'";
+            $table .= 'Strata Inventory';
 
-        $table = '<tr>
+        $table .= '<tr>
                     <th>ID</th>
                     <th>Sticker Number</th>
                     <th>Name</th>
@@ -63,8 +64,9 @@ function searchresults($company, $textinput) {
     else if ($company == 'spectraInventory') {
         $dbquery = 'SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' 
         . $company . " WHERE item_name  LIKE '%" . $textinput . "%'";
+        $table .= 'Spectra Inventory';
 
-        $table = '<tr>
+        $table .= '<tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Quantity</th>
