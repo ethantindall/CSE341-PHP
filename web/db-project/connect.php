@@ -26,14 +26,14 @@ function connect_to_db() {
     }
 }
 
-
+/*
 function truefalse($varr) {
     if ($varr == 0) {
         return "FALSE";
     } else {
         return "TRUE";
     }
-}
+}*/
 
 /*
 function searchresults($company, $searchby, $textinput) {
