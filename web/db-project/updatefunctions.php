@@ -114,7 +114,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     $stmt->execute();
 }
     catch (PDOException $e) {
-            echo 'error';
+            echo 'error: ' . $e ;
     }
 }
 ?>
