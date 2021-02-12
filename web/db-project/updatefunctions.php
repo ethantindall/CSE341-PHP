@@ -33,6 +33,19 @@ function truefalse($varr) {
     }
 }
 
+function getStaff($id) {
+    switch ($id) {
+        case 1:
+            return 'Ethan';
+            break;
+        case 2:
+            return 'James';
+            break;
+        case 3:
+            return 'Steve';
+            break;
+    }
+}
 
 function searchresults($company, $textinput) {
     $db = connectToDB();
@@ -53,12 +66,13 @@ function searchresults($company, $textinput) {
                 </tr>';
         foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);
+            $staff = getStaff($row['item_checked_out_by']);
             $table .=  '<tr><td>' . $row['item_id'] 
                 . '</td><td>' . $row['item_sticker_id']
                 . '</td><td>' . $row['item_name']  
                 . '</td><td>' . $row['item_quantity']
                 . '</td><td>' . $boolcheckedout
-                . '</td><td>' . $row['item_checked_out_by']
+                . '</td><td>' . $staff
                 . '</td></tr>';
 
         }
@@ -75,15 +89,19 @@ function searchresults($company, $textinput) {
                     <th>Quantity</th>
                     <th>Owner</th>
                     <th>Checked Out</th>
+                    <th>Checked Out By</th>
                 </tr>';
 
         foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);
+            $staff = getStaff($row['item_checked_out_by']);
+
             $table .=  '<tr><td>' . $row['item_id'] 
                 . '</td><td>' . $row['item_name']  
                 . '</td><td>' . $row['item_quantity']
                 . '</td><td>' . $row['item_owner']
                 . '</td><td>' . $boolcheckedout
+                . '</td><td>' . $staff
                 . '</td></tr>';
         }
         return $table;
