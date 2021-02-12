@@ -35,7 +35,7 @@ function truefalse($varr) {
     }
 }
 
-
+/*
 function searchresults($company, $searchby, $textinput) {
     $db = connect_to_db();
     $table = '';
@@ -90,7 +90,7 @@ function searchresults($company, $searchby, $textinput) {
     else {
         echo 'Please Select a Table';
     }
-}
+}*/
 
 
 /*function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $checkedOut, $checkedOutDate, $checkedOutBy, $description) {
