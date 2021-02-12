@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-require 'connect.php';
+//require 'connect.php';
 
 ?><!DOCTYPE html>
 <html lang="en-us">
