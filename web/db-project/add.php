@@ -44,8 +44,8 @@ session_start();
                     Sticker ID: <input type="number" id="add-sticker" name="add-sticker"><br>
                     Name: <input required type="text" name="add-name"><br>
                     Quantity: <input required type="number" min="0" max="100" name="add-quantity"><br>
-                    Checked Out:  <input required type="radio" name="add-checked-out" value="1">True</input>
-                                  <input required type="radio" name="add-checked-out" value="0">False</input><br>
+                    Checked Out:  <input required type="radio" name="add-checked-out" value="TRUE">True</input>
+                                  <input required type="radio" name="add-checked-out" value="FALSE">False</input><br>
                         Checked Out By: <input type="text" name="add-checkout-by"><br>
                     Description: <textarea required name="add-description"></textarea>
 

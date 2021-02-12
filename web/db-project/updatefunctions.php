@@ -96,7 +96,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
         $query = "INSERT INTO " . $company . " (item_sticker_id, item_name, item_description, 
                                         item_quantity, item_storage_location,
                                         item_checked_out, item_checked_out_by) 
-                VALUES (" . $stickerId . ", '" . $name . "', '" . $description . "', '"
+                VALUES (" . $stickerId . ", '" . $name . "', '" . $description . "', "
                          . $quantity . ", 1, " . $checkedOut . "', '" . $checkedOutBy ."')";
 
     echo $query;
