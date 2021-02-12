@@ -102,7 +102,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
 
     $stmt = $db->prepare($sql);
 
-    $stmt->bindValue(':com', $company);
+    //$stmt->bindValue(':com', $company);
     $stmt->bindValue(':sticker', $stickerId);
     $stmt->bindValue(':iname', $name);
     $stmt->bindValue(':idesc', $description);
