@@ -1,8 +1,5 @@
 <?php
 
-
-/*
-
 //connect to database
 function connect_to_db() {
     try {
@@ -96,7 +93,7 @@ function searchresults($company, $searchby, $textinput) {
 }
 
 
-function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $checkedOut, $checkedOutDate, $checkedOutBy, $description) {
+/*function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $checkedOut, $checkedOutDate, $checkedOutBy, $description) {
     if ($company == 'strata') {
         $query = 'INSERT INTO :company (item_sticker_id, item_name, item_description, item_quantity
         item_purchase_date, item_checked_out, item_checked_out_date, item_checked_out_by) 
@@ -125,8 +122,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $c
     
     //    $stmt->execute();
 
-}
-*/
-echo 'hi';
+}*/
+
 
 ?>
