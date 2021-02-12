@@ -97,7 +97,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
                                         item_quantity, item_storage_location,
                                         item_checked_out, item_checked_out_by) 
                 VALUES (" . $stickerId . ", '" . $name . "', '" . $description . "', '"
-                         . $quantity . "', 1, '" . $checkedOut . "', '" . $checkedOutBy ."')";
+                         . $quantity . ", 1, " . $checkedOut . "', '" . $checkedOutBy ."')";
 
     echo $query;
     $db = connectToDB(); 
