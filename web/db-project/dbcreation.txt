@@ -1,0 +1,54 @@
+CREATE TABLE storageLocations (
+	storage_item_id SERIAL PRIMARY KEY,
+	storage_room VARCHAR NOT NULL,
+	storage_rack VARCHAR NOT NULL,
+	storage_shelf INT NOT NULL,
+	storage_notes VARCHAR
+);
+
+CREATE TABLE supportStaff (
+	support_staff_id SERIAL PRIMARY KEY,
+	support_staff_name VARCHAR NOT NULL
+);
+
+
+CREATE TABLE strataInventory (
+	item_id SERIAL PRIMARY KEY,
+	item_sticker_id INT,
+	item_name VARCHAR NOT NULL,
+	item_description VARCHAR,
+	item_quantity INT NOT NULL,
+	item_storage_location INT NOT NULL,
+	item_checked_out BOOLEAN,
+	item_checked_out_by INT,
+
+	FOREIGN KEY (item_storage_location) REFERENCES storageLocations(storage_item_id),
+	FOREIGN KEY (item_checked_out_by) REFERENCES supportStaff(support_staff_id)
+);
+
+CREATE TABLE spectraInventory (
+	item_id SERIAL PRIMARY KEY,
+	item_name VARCHAR NOT NULL,
+	item_description VARCHAR,
+	item_quantity INT NOT NULL,
+	item_storage_location INT NOT NULL,
+	item_owner VARCHAR,
+	item_checked_out BOOLEAN,
+	item_checked_out_by INT,
+
+	FOREIGN KEY (item_storage_location) REFERENCES storageLocations(storage_item_id),
+	FOREIGN KEY (item_checked_out_by) REFERENCES supportStaff(support_staff_id)
+);
+
+
+
+INSERT INTO storageLocations (storage_room, storage_rack, storage_shelf, storage_notes) VALUES ('Ethans office', 'A', 2, 'Intranet Stuff');
+INSERT INTO supportStaff (support_staff_name) VALUES ('Ethan');
+
+INSERT INTO strataInventory (item_sticker_id, item_name, item_description, item_quantity, item_storage_location, item_checked_out, item_checked_out_by)
+VALUES
+(1000, 'Dell Pavillion 3600', 'Ethans Laptop', 1, 1, TRUE, 1);
+
+INSERT INTO spectraInventory (item_name, item_description, item_quantity, item_storage_location, item_owner, item_checked_out) VALUES ('Polycom Phone', 'Phone system', 1, 1, 'client company', FALSE);
+
+

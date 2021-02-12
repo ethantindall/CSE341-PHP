@@ -37,7 +37,7 @@ function truefalse($varr) {
 }
 
 
-function searchresults($company, $searchby, $textinput) {
+function searchresults($company, $textinput) {
     $db = connect_to_db();
     $table = '';
 

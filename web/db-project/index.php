@@ -24,11 +24,16 @@ $_SESSION['message'] = '';
         $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by', FILTER_SANITIZE_STRING);
         $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
 
-        //addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
+        addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
 
         include 'home.php';
         break;
     case 'search':
+        $name = filter_input(INPUT_POST, 'sName', FILTER_SANITIZE_STRING);
+        $company = filter_input(INPUT_POST, 'sCompany', FILTER_SANITIZE_STRING);
+
+         searchresults($company, $name);
+
 
         include 'home.php';
         break;
