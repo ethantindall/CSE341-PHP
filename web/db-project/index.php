@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-require_once 'connect.php';
 require_once 'updatefunctions.php';
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
