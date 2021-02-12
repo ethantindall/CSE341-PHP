@@ -29,6 +29,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $purchaseDate, $c
     $stmt->bindValue(':checkdate', $checkedOutDate, PDO::PARAM_INT);
     $stmt->bindValue(':checkby', $checkedOutBy, PDO::PARAM_INT);
     
+    echo $stmt;
     //$stmt->execute();
 
 }
