@@ -79,7 +79,7 @@ function searchresults($company, $textinput) {
         return $table;
     }
     else if ($company == 'spectraInventory') {
-        $dbquery = 'SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' 
+        $dbquery = 'SELECT item_id, item_name, item_quantity, item_owner, item_checked_out, item_checked_out_by FROM ' 
         . $company . " WHERE item_name  LIKE '%" . $textinput . "%'";
         $table .= 'Spectra Inventory';
 

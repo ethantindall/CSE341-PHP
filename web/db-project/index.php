@@ -26,7 +26,7 @@ $_SESSION['message'] = '';
 
         addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
 
-
+        $_SESSION['results'] = 'Data Added: Select a table';
 
         include 'home.php';
         break;
