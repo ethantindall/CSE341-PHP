@@ -100,7 +100,6 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
                          . $quantity . "', 1, '" . $checkedOut . "', '" . $checkedOutBy ."')";
 
     $db = connectToDB(); 
-    echo $query;
 
     $stmt = $db->prepare($query);
 
