@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require 'connect.php';
+//require 'connect.php';
 
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
@@ -16,7 +16,6 @@ $_SESSION['message'] = '';
         include 'add.php';
         break;
     case 'addToDatabase':
-        $name = $_POST['name'];
 
         $company = filter_input(INPUT_POST, 'add-company', FILTER_SANITIZE_STRING);
         $stickerId = filter_input(INPUT_POST, 'add-sticker', FILTER_SANITIZE_NUMBER_INT);
