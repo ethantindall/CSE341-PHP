@@ -1,8 +1,4 @@
-<?php 
-session_start();
-
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +6,7 @@ session_start();
     <style><?php include "main.css" ?></style>
     <style>
         main {
-            width: 700px;
+            width: 500px;
             margin: 40px auto;
         }
     </style>
