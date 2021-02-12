@@ -58,7 +58,7 @@ function searchresults($company, $textinput) {
                 . '</td><td>' . $boolcheckedout
                 . '</td></tr>';
         }
-        echo $table;
+        return $table;
     }
     else if ($company == 'spectraInventory') {
         $dbquery = 'SELECT item_id, item_name, item_quantity, item_owner, item_checked_out FROM ' 
@@ -81,10 +81,10 @@ function searchresults($company, $textinput) {
                 . '</td><td>' . $boolcheckedout
                 . '</td></tr>';
         }
-        echo $table;
+        return $table;
     }
     else {
-        echo 'Please Select a Table';
+        return 'Please Select a Table';
     }
 }
 

@@ -41,21 +41,6 @@ session_start();
 
         </div>
 
-        <div class="display-area">
-            <table>
-
-            <?php 
-                $company = $_POST['company'] . 'Inventory';
-                $searchby = $_POST['searchBy'];
-                $textinput = $_POST['searchParameters'];
-  
-                searchresults($company, $searchby, $textinput);
-
-            ?>          
-            
-            </table>
-        </div>
-
     </main>
     <script src="script.js"></script>
 </body>
