@@ -24,8 +24,8 @@ $_SESSION['message'] = '';
         $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by', FILTER_SANITIZE_STRING);
         $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
 
-        addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
-
+        $rows = addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
+        echo $rows;
         include 'home.php';
         break;
     case 'search':

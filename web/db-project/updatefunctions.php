@@ -29,7 +29,9 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     */
     
     $stmt->execute();
-
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
 }
 
 
