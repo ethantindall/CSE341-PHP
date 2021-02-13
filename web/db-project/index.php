@@ -54,9 +54,9 @@ $_SESSION['results'] = '';
         include 'updateitem.php';
         break;
     case 'deleteStrata':
-
+        
         $sql= 'DELETE FROM strataInventory where item_id = :item';
-        $stmt->bindValue(':item', $_POST['item']);
+        $stmt->bindValue(':item', $_GET['item']);
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
