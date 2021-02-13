@@ -55,11 +55,13 @@ $_SESSION['results'] = '';
         break;
     case 'deleteStrata':
         $_SESSION['message'] = 'hello world';
-        /*$sql= 'DELETE FROM strataInventory where item_id = :item';
+        $db = connectToDB();
+
+        $sql= 'DELETE FROM strataInventory where item_id = :item';
         $stmt->bindValue(':item', $_GET['item']);
         $stmt = $db->prepare($sql);
         $stmt->execute();
-*/
+
         include 'home.php';
         break;
     default:
