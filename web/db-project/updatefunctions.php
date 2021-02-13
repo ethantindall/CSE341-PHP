@@ -97,8 +97,8 @@ function searchresults($company, $textinput) {
             $staff = getStaff($row['item_checked_out_by']);
 
             $table .=  '<tr><td>' . $row['item_id'] 
-                . '</td><td>' . $row['item_name']  
-                . '</td><td>' . $row['item_quantity']
+            . '</td><td>' .  '<a href="index.php/?pullSpectraItem='. $row['item_id'] . '">' . $row['item_name']  
+            . '</a></td><td>' . $row['item_quantity']
                 . '</td><td>' . $row['item_owner']
                 . '</td><td>' . $boolcheckedout
                 . '</td><td>' . $staff
