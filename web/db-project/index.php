@@ -41,7 +41,7 @@ $_SESSION['results'] = '';
         include 'home.php';
         break;
     case 'pullStrataItem':
-        $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_NUMBER_INT);
+        $item = $_POST['item'];
         $_SESSION['message'] = $item;
         include 'updateitem.php';
         break;
