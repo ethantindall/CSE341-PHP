@@ -43,15 +43,24 @@ $_SESSION['results'] = '';
     case 'pullStrataItem':
         $item = $_GET['item'];
 
-        getStrataUpdateInfo($item);
+        //getStrataUpdateInfo($item);
 
         include 'updateitem.php';
         break;
     case 'pullSpectraItem':
         $item = $_GET['item'];
-        getSpectraUpdateInfo($item);
+        //getSpectraUpdateInfo($item);
 
         include 'updateitem.php';
+        break;
+    case 'deleteStrata':
+
+        $sql= 'DELETE FROM strataInventory where item_id = :item';
+        $stmt->bindValue(':item', $_POST['item']);
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+
+        include 'home.php';
         break;
     default:
         include 'home.php';

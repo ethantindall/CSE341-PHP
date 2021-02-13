@@ -69,10 +69,11 @@ function searchresults($company, $textinput) {
             $staff = getStaff($row['item_checked_out_by']);
             $table .= '<tr><td>' . $row['item_id'] 
                 . '</td><td>' . $row['item_sticker_id']
-                . '</td><td>' .  '<a href="index.php/?action=pullStrataItem&item='. $row['item_id'] . '">' . $row['item_name']  
-                . '</a></td><td>' . $row['item_quantity']
+                . '</td><td>' . $row['item_name']  
+                . '</td><td>' . $row['item_quantity']
                 . '</td><td>' . $boolcheckedout
                 . '</td><td>' . $staff
+                . '</td><td><a href="index.php/?action=deleteStrata&item='. $row['item_id'] . '">Delete</a>'
                 . '</td></tr>';
 
         }
@@ -95,13 +96,13 @@ function searchresults($company, $textinput) {
         foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);
             $staff = getStaff($row['item_checked_out_by']);
-
             $table .=  '<tr><td>' . $row['item_id'] 
-            . '</td><td>' .  '<a href="index.php/?action=pullSpectraItem&item='. $row['item_id'] . '">' . $row['item_name']  
-            . '</a></td><td>' . $row['item_quantity']
+                . '</td><td>' . $row['item_name']  
+                . '</td><td>' . $row['item_quantity']
                 . '</td><td>' . $row['item_owner']
                 . '</td><td>' . $boolcheckedout
                 . '</td><td>' . $staff
+                . '</td><td><a href="index.php/?action=deleteSpectra&item='. $row['item_id'] . '">Delete</a>'
                 . '</td></tr>';
         }
         return $table;
@@ -162,9 +163,12 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
 
 function getStrataUpdateInfo($item) {
     $db = connectToDB(); 
-    $sql = 'SELECT * FROM strataInventory WHERE item_id = ' . $item;
-    $query = $db->query($sql);
-    echo $query;
-}
+    $dbquery = 'SELECT * FROM strataInventory WHERE item_id = ' . $item;
+    foreach ($db->query($dbquery) as $row) {
+
+     }
+
+
+    }
 
 ?>
