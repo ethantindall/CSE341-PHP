@@ -41,9 +41,13 @@ $_SESSION['results'] = '';
         include 'home.php';
         break;
     case 'pullStrataItem':
+        $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_NUMBER_INT);
+        echo $item;
         include 'updateitem.php';
         break;
     case 'pullSpectraItem':
+        $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_NUMBER_INT);
+
         include 'updateitem.php';
         break;
     default:
