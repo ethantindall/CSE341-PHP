@@ -161,14 +161,17 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
     }
 }
 
-function getStrataUpdateInfo($item) {
-    $db = connectToDB(); 
-    $dbquery = 'SELECT * FROM strataInventory WHERE item_id = ' . $item;
-    foreach ($db->query($dbquery) as $row) {
+function deleteStrata($item) {
+    try {
+    $db = connectToDB();
 
-     }
-
-
+    $sql= 'DELETE FROM strataInventory where item_id = :item';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':item', $item);
+    $stmt->execute();
     }
-
+    catch (PDOException $e) {
+        echo 'error: ' . $e ;
+}
+}
 ?>

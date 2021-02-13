@@ -55,13 +55,8 @@ $_SESSION['results'] = '';
         break;
     case 'deleteStrata':
         $item = $_GET['item'];
-        $db = connectToDB();
 
-        $sql= 'DELETE FROM strataInventory where item_id = :item';
-        $stmt->bindValue(':item', $item);
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-
+        deleteStrata($item);
         include 'home.php';
         break;
     default:
