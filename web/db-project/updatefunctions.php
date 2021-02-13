@@ -69,7 +69,7 @@ function searchresults($company, $textinput) {
             $staff = getStaff($row['item_checked_out_by']);
             $table .= '<tr><td>' . $row['item_id'] 
                 . '</td><td>' . $row['item_sticker_id']
-                . '</td><td>' .  '<a href="index.php/?pullStrataItem='. $row['item_id'] . '">' . $row['item_name']  
+                . '</td><td>' .  '<a href="index.php/?action=pullStrataItem&item='. $row['item_id'] . '">' . $row['item_name']  
                 . '</a></td><td>' . $row['item_quantity']
                 . '</td><td>' . $boolcheckedout
                 . '</td><td>' . $staff
@@ -97,7 +97,7 @@ function searchresults($company, $textinput) {
             $staff = getStaff($row['item_checked_out_by']);
 
             $table .=  '<tr><td>' . $row['item_id'] 
-            . '</td><td>' .  '<a href="index.php/?pullSpectraItem='. $row['item_id'] . '">' . $row['item_name']  
+            . '</td><td>' .  '<a href="index.php/?action=pullSpectraItem&item='. $row['item_id'] . '">' . $row['item_name']  
             . '</a></td><td>' . $row['item_quantity']
                 . '</td><td>' . $row['item_owner']
                 . '</td><td>' . $boolcheckedout
