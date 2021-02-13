@@ -174,4 +174,18 @@ function deleteStrata($item) {
         echo 'error: ' . $e ;
 }
 }
+
+function deleteSpectra($item) {
+    try {
+    $db = connectToDB();
+
+    $sql= 'DELETE FROM spectraInventory where item_id = :item';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':item', $item);
+    $stmt->execute();
+    }
+    catch (PDOException $e) {
+        echo 'error: ' . $e ;
+}
+}
 ?>

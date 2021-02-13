@@ -59,6 +59,12 @@ $_SESSION['results'] = '';
         deleteStrata($item);
         include 'home.php';
         break;
+    case 'deleteSpectra':
+        $item = $_GET['item'];
+
+        deleteSpectra($item);
+        include 'home.php';
+        break;
     default:
         include 'home.php';
         break;
