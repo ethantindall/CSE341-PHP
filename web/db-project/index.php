@@ -42,7 +42,7 @@ $_SESSION['results'] = '';
         break;
     case 'pullStrataItem':
         $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_NUMBER_INT);
-        echo $item;
+        $_SESSION['message'] = $item;
         include 'updateitem.php';
         break;
     case 'pullSpectraItem':
