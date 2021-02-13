@@ -41,7 +41,7 @@ $_SESSION['results'] = '';
         include 'home.php';
         break;
     case 'pullStrataItem':
-        $item = $_POST['item'];
+        $item = $_GET['item'];
         $_SESSION['message'] = $item;
         include 'updateitem.php';
         break;
