@@ -31,7 +31,7 @@ $_SESSION['results'] = '';
         include 'home.php';
         break;
     case 'search':
-        $name = filter_input(INPUT_POST, 'sName', FILTER_SANITIZE_STRING);
+        $name = filter_input(INPUT_POST, 'searchParameters', FILTER_SANITIZE_STRING);
         $company = filter_input(INPUT_POST, 'sCompany', FILTER_SANITIZE_STRING);
         $company = $company . 'Inventory';
 
