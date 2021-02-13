@@ -54,11 +54,11 @@ $_SESSION['results'] = '';
         include 'updateitem.php';
         break;
     case 'deleteStrata':
-        $_SESSION['message'] = $_GET['item'];
+        $item = $_GET['item'];
         $db = connectToDB();
 
         $sql= 'DELETE FROM strataInventory where item_id = :item';
-        $stmt->bindValue(':item', $_GET['item']);
+        $stmt->bindValue(':item', $item);
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
