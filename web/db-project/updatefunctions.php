@@ -67,10 +67,10 @@ function searchresults($company, $textinput) {
         foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);
             $staff = getStaff($row['item_checked_out_by']);
-            $table .= '<tr><td>' . '<a href="index.php/?pullStrataItem='. $row['item_id'] . '">' . $row['item_id'] 
-                . '</a></td><td>' . $row['item_sticker_id']
-                . '</td><td>' . $row['item_name']  
-                . '</td><td>' . $row['item_quantity']
+            $table .= '<tr><td>' . $row['item_id'] 
+                . '</td><td>' . $row['item_sticker_id']
+                . '</td><td>' .  '<a href="index.php/?pullStrataItem='. $row['item_id'] . '">' . $row['item_name']  
+                . '</a></td><td>' . $row['item_quantity']
                 . '</td><td>' . $boolcheckedout
                 . '</td><td>' . $staff
                 . '</td></tr>';
