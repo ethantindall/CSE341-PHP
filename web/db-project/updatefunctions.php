@@ -49,9 +49,8 @@ function getStaff($id) {
 
 function searchresults($company, $textinput) {
     $db = connectToDB();
-    $table = '';
+    $table = $textinput;
 
-    echo $textinput;
     if ($company == 'strataInventory') {
         $dbquery = 'SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out, item_checked_out_by FROM ' 
             . $company . " WHERE item_name  LIKE '%" . $textinput . "%'";
