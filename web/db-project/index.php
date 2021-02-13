@@ -40,6 +40,12 @@ $_SESSION['results'] = '';
 
         include 'home.php';
         break;
+    case 'pullStrataItem':
+        include 'updateitem.php';
+        break;
+    case 'pullSpectraItem':
+        include 'updateitem.php';
+        break;
     default:
         include 'home.php';
         break;
