@@ -42,11 +42,14 @@ $_SESSION['results'] = '';
         break;
     case 'pullStrataItem':
         $item = $_GET['item'];
-        $_SESSION['message'] = $item;
+
+        getStrataUpdateInfo($item);
+
         include 'updateitem.php';
         break;
     case 'pullSpectraItem':
-        $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_NUMBER_INT);
+        $item = $_GET['item'];
+        getSpectraUpdateInfo($item);
 
         include 'updateitem.php';
         break;

@@ -159,4 +159,12 @@ function addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $che
             echo 'error: ' . $e ;
     }
 }
+
+function getStrataUpdateInfo($item) {
+    $db = connectToDB(); 
+    $sql = 'SELECT * FROM strataInventory WHERE item_id = ' . $item;
+    $query = $db->query($sql);
+    echo $query;
+}
+
 ?>
