@@ -60,10 +60,10 @@ session_start();
                     Checked Out:  <input required type="radio" name="add-checked-out" onclick="checkDisable(0)" <?php if(isset($checkedOut) && $checkedOut == 'TRUE'){ echo 'checked';} ?> value="TRUE">True</input>
                                   <input required type="radio" name="add-checked-out" onclick="checkDisable(1)" <?php if(isset($checkedOut) && $checkedOut == 'FALSE'){ echo 'checked';} ?>value="FALSE">False</input><br>
                         Checked Out By:  <select id="add-checkout-by" name="add-checkout-by">
-                                            <option value="NULL" selected disabled hidden>Select an Option</option> 
-                                            <option value="1">Ethan</option>
-                                            <option value="2">James</option>
-                                            <option value="3">Steve</option>
+                                            <option value="NULL" <?php if(!isset($checkedOutBy)) {echo 'selected';} ?> disabled hidden>Select an Option</option> 
+                                            <option value="1" <?php if(isset($checkedOutBy) && $checkedOutBy == 'Ethan') {echo 'selected';} ?>>Ethan</option>
+                                            <option value="2" <?php if(isset($checkedOutBy) && $checkedOutBy == 'James') {echo 'selected';} ?>>James</option>
+                                            <option value="3" <?php if(isset($checkedOutBy) && $checkedOutBy == 'Steve') {echo 'selected';} ?>>Steve</option>
                                         </select><br>
                         Description: <textarea required name="add-description"><?php if(isset($description)){ echo $description;} ?></textarea>
 
