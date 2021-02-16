@@ -16,6 +16,7 @@ $_SESSION['results'] = '';
         break;
     case 'update':
         $company = filter_input(INPUT_POST, 'add-company', FILTER_SANITIZE_STRING);
+        $db = connectToDB(); 
 
         if($company == 'strataInventory') {
             $id = filter_input(INPUT_POST, 'item-id', FILTER_SANITIZE_NUMBER_INT);
@@ -34,8 +35,16 @@ $_SESSION['results'] = '';
                 item_checked_out_by = :checkedOutBy,
                 item_description = :description
                 WHERE item_id = :id';
-            echo $sql;
+                $stmt = $db->prepare($sql);
 
+                $stmt->bindValue(':sticker', $stickerId);
+                $stmt->bindValue(':name', $name);
+                $stmt->bindValue(':description', $description);
+                $stmt->bindValue(':quantity', $quantity);
+                $stmt->bindValue(':checkedOut', $checkedOut);
+                $stmt->bindValue(':checkedOutBy', $checkedOutBy);
+                $stmt->bindValue(':id', $id);
+                $stmt->execute();
         }
         else if($company == 'spectraInventory') {
             $id = filter_input(INPUT_POST, 'item-id', FILTER_SANITIZE_NUMBER_INT);
