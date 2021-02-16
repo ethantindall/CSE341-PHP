@@ -44,9 +44,7 @@ $_SESSION['results'] = '';
                 $stmt->bindValue(':checkedOutBy', $checkedOutBy);
                 $stmt->bindValue(':id', $id);
                 $stmt->execute();
-                $_SESSION['results'] = 'Data Updated: Select a table' . searchresults('strataInventory', '');
-
-
+                $_SESSION['results'] = searchresults('strataInventory', '');
         }
         else if($company == 'spectraInventory') {
             $sql = 'UPDATE '. $company . ' SET
@@ -65,7 +63,7 @@ $_SESSION['results'] = '';
                 $stmt->bindValue(':checkedOutBy', $checkedOutBy);
                 $stmt->bindValue(':id', $id);
                 $stmt->execute();
-                $_SESSION['results'] = 'Data Updated: Select a table' . searchresults('spectraInventory', '');
+                $_SESSION['results'] = searchresults('spectraInventory', '');
 
         }
 
@@ -84,7 +82,7 @@ $_SESSION['results'] = '';
 
         addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
 
-        $_SESSION['results'] = 'Data Added: Select a table';
+        $_SESSION['results'] = searchresults($company, '');
 
         include 'home.php';
         break;
