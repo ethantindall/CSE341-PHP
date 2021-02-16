@@ -81,6 +81,12 @@ session_start();
             if (checkedOutOptions[1].checked) {
                 document.getElementById('add-checkout-by').disabled = true;
             }
+
+            let companyOptions = document.getElementsByName("add-company");
+            if (checkedOutOptions[0].checked) {
+                document.getElementById('add-sticker').disabled = true;
+            }
+
             function when(x) {
                 if (x == 0) {document.getElementById('add-sticker').disabled= false;}
                 if (x == 1) {document.getElementById('add-sticker').disabled= true;
