@@ -188,6 +188,40 @@ function deleteSpectra($item) {
     }
     catch (PDOException $e) {
         echo 'error: ' . $e ;
+    }
 }
+
+function getStrataUpdateInfo($item) {
+    try {
+        $db = connectToDB();
+    
+        $sql= 'SELECT * FROM strataInventory where item_id = :item';
+        foreach ($db->query($sql) as $row) {
+            return $row;
+        }
+
+    }
+    catch (PDOException $e) {
+            echo 'error: ' . $e ;
+    }
 }
+/*
+$db = connectToDB();
+$table = $textinput;
+
+if ($company == 'strataInventory') {
+    $dbquery = 'SELECT item_id, item_sticker_id, item_name, item_quantity, item_checked_out, item_checked_out_by FROM ' 
+        . $company . " WHERE item_name  LIKE '%" . $textinput . "%'";
+        $table .= 'Strata Inventory';
+
+    $table .= '<tr>
+                <th>ID</th>
+                <th>Sticker Number</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Checked Out</th>
+                <th>Checked Out By</th>
+            </tr>';
+    foreach ($db->query($sql) as $row) {
+*/
 ?>

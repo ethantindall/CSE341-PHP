@@ -57,7 +57,14 @@ $_SESSION['results'] = '';
     case 'requestUpdateStrata':
         $item = $_GET['item'];
 
-        //getStrataUpdateInfo($item);
+        getStrataUpdateInfo($item);
+        $company = 'strata';
+        $stickerId = $row['item_sticker_id'];
+        $name = $row['item_name'];
+        $quantity = $row['item_quantity'];
+        $checkedOut = $row['item_checked_out'];
+        $checkedOutBy = $row['item_checked_out_by'];
+        $description = $row['item_description'];
 
         include 'updateitem.php';
         break;
