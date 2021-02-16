@@ -54,7 +54,7 @@ session_start();
                     <input type="radio" required name="add-company" value="spectraInventory" onclick="when(1)">Spectra</input>
                 </div>
                 <div id="addform">
-                    Sticker ID: <input type="number" id="add-sticker" name="add-sticker" value="<?php if(isset($row['item_sticker_id'])){ echo $row['item_sticker_id'];} ?>"><br>
+                    Sticker ID: <input type="number" id="add-sticker" name="add-sticker" value="<?php if(isset($stickerId)){ echo $stickerId;} ?>"><br>
                     Name: <input required type="text" name="add-name"><br>
                     Quantity: <input required type="number" min="0" max="100" name="add-quantity"><br>
                     Checked Out:  <input required type="radio" name="add-checked-out" onclick="checkDisable(0)" value="TRUE">True</input>

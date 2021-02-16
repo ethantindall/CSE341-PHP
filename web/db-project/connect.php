@@ -181,7 +181,7 @@ function deleteSpectra($item) {
     try {
     $db = connectToDB();
 
-    $sql= 'DELETE FROM spectraInventory where item_id = :item';
+    $sql= 'DELETE FROM spectraInventory WHERE item_id = :item';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':item', $item);
     $stmt->execute();
@@ -195,7 +195,7 @@ function getStrataUpdateInfo($item) {
     try {
         $db = connectToDB();
     
-        $sql= 'SELECT * FROM strataInventory where item_id = ' . $item;
+        $sql= 'SELECT * FROM strataInventory WHERE item_id = ' . $item;
         echo $sql;
         foreach ($db->query($sql) as $row) {
             return $row;
