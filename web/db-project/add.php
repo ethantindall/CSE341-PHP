@@ -68,7 +68,7 @@ session_start();
                                             <option value="2">James</option>
                                             <option value="3">Steve</option>
                                         </select><br>
-                        Description: <textarea required name="add-description"></textarea>
+                        Description: <br><textarea required name="add-description"></textarea>
 
                 </div>
 
