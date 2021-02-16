@@ -75,7 +75,8 @@ session_start();
             <a href="/db-project/index.php"><button>Return to Home</button></a>
 
         </div>
-        <script>   
+        <script>
+            console.log(document.getElementById('add-checked-out').value);
             if (document.getElementById('add-checked-out').value == 'TRUE') {
                 document.getElementById('add-checkout-by').disabled = true;
             }
