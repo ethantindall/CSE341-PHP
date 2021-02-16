@@ -54,11 +54,11 @@ $_SESSION['results'] = '';
 
         include 'home.php';
         break;
-    case 'requestUpdateStrata':
+    case 'requestUpdate':
         $item = $_GET['item'];
+        $company = $_GET['company'];
 
-        $row = getStrataUpdateInfo($item);
-        $company = 'strata';
+        $row = getUpdateInfo($item, $company);
         $id = $row['item_id'];
         $stickerId = $row['item_sticker_id'];
         $name = $row['item_name'];
@@ -66,12 +66,6 @@ $_SESSION['results'] = '';
         $checkedOut = $row['item_checked_out'];
         $checkedOutBy = $row['item_checked_out_by'];
         $description = $row['item_description'];
-
-        include 'updateitem.php';
-        break;
-    case 'requestUpdateSpectra':
-        $item = $_GET['item'];
-        //getSpectraUpdateInfo($item);
 
         include 'updateitem.php';
         break;

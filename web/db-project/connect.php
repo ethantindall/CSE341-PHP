@@ -74,7 +74,7 @@ function searchresults($company, $textinput) {
                 . '</td><td>' . $boolcheckedout
                 . '</td><td>' . $staff
                 . '</td><td><a href="index.php/?action=deleteStrata&item='. $row['item_id'] . '">Delete</a>'
-                . '</td><td><a href="index.php/?action=requestUpdateStrata&item='. $row['item_id'] . '">Update</a>'
+                . '</td><td><a href="index.php/?action=requestUpdate&company=strata&item='. $row['item_id'] . '">Update</a>'
                 . '</td></tr>';
 
         }
@@ -104,7 +104,7 @@ function searchresults($company, $textinput) {
                 . '</td><td>' . $boolcheckedout
                 . '</td><td>' . $staff
                 . '</td><td><a href="index.php/?action=deleteSpectra&item='. $row['item_id'] . '">Delete</a>'
-                . '</td><td><a href="index.php/?action=requestUpdateSpectra&item='. $row['item_id'] . '">Update</a>'
+                . '</td><td><a href="index.php/?action=requestUpdate&company=spectra&item='. $row['item_id'] . '">Update</a>'
                 . '</td></tr>';
         }
         return $table;
@@ -191,11 +191,11 @@ function deleteSpectra($item) {
     }
 }
 
-function getStrataUpdateInfo($item) {
+function getUpdateInfo($item, $company) {
     try {
         $db = connectToDB();
     
-        $sql= 'SELECT * FROM strataInventory WHERE item_id = ' . $item;
+        $sql= 'SELECT * FROM ' . $company . 'Inventory WHERE item_id = ' . $item;
         foreach ($db->query($sql) as $row) {
             return $row;
         }
