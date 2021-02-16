@@ -59,6 +59,7 @@ $_SESSION['results'] = '';
 
         $row = getStrataUpdateInfo($item);
         $company = 'strata';
+        $id = $row['item_id'];
         $stickerId = $row['item_sticker_id'];
         $name = $row['item_name'];
         $quantity = $row['item_quantity'];

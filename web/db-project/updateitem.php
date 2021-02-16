@@ -50,8 +50,8 @@ session_start();
 
             <label>Select company: </label>
                 <div>
-                    <input type="radio" required name="add-company" value="strataInventory" onclick="when(0)">Strata</input>
-                    <input type="radio" required name="add-company" value="spectraInventory" onclick="when(1)">Spectra</input>
+                    <input type="radio" required name="add-company" value="strataInventory" <?php if(isset($company) && $company == 'strata'){ echo 'checked';} ?> onclick="when(0)">Strata</input>
+                    <input type="radio" required name="add-company" value="spectraInventory" <?php if(isset($company) && $company == 'spectra'){ echo 'checked';} ?>onclick="when(1)">Spectra</input>
                 </div>
                 <div id="addform">
                     Sticker ID: <input type="number" id="add-sticker" name="add-sticker" value="<?php if(isset($stickerId)){ echo $stickerId;} ?>"><br>
@@ -69,7 +69,7 @@ session_start();
 
                 </div>
 
-
+                <input type="hidden" name="item-id" value="<?php echo $id; ?>">
                 <input id="search" type="submit" value="Add to DB">
                 <input type="hidden" name="action" value="update">
 
