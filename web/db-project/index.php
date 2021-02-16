@@ -17,16 +17,15 @@ $_SESSION['results'] = '';
     case 'update':
         $company = filter_input(INPUT_POST, 'add-company', FILTER_SANITIZE_STRING);
         $db = connectToDB(); 
+        $id = filter_input(INPUT_POST, 'item-id', FILTER_SANITIZE_NUMBER_INT);
+        $stickerId = filter_input(INPUT_POST, 'add-sticker', FILTER_SANITIZE_NUMBER_INT);
+        $name = filter_input(INPUT_POST, 'add-name', FILTER_SANITIZE_STRING);
+        $quantity = filter_input(INPUT_POST, 'add-quantity', FILTER_SANITIZE_NUMBER_INT);
+        $checkedOut = filter_input(INPUT_POST, 'add-checked-out');
+        $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by');
+        $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
 
         if($company == 'strataInventory') {
-            $id = filter_input(INPUT_POST, 'item-id', FILTER_SANITIZE_NUMBER_INT);
-            $stickerId = filter_input(INPUT_POST, 'add-sticker', FILTER_SANITIZE_NUMBER_INT);
-            $name = filter_input(INPUT_POST, 'add-name', FILTER_SANITIZE_STRING);
-            $quantity = filter_input(INPUT_POST, 'add-quantity', FILTER_SANITIZE_NUMBER_INT);
-            $checkedOut = filter_input(INPUT_POST, 'add-checked-out');
-            $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by');
-            $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
-
             $sql = 'UPDATE '. $company . ' SET
                 item_sticker_id = :sticker,
                 item_name = :name,
@@ -45,17 +44,26 @@ $_SESSION['results'] = '';
                 $stmt->bindValue(':checkedOutBy', $checkedOutBy);
                 $stmt->bindValue(':id', $id);
                 $stmt->execute();
+
         }
         else if($company == 'spectraInventory') {
-            $id = filter_input(INPUT_POST, 'item-id', FILTER_SANITIZE_NUMBER_INT);
-            $name = filter_input(INPUT_POST, 'add-name', FILTER_SANITIZE_STRING);
-            $quantity = filter_input(INPUT_POST, 'add-quantity', FILTER_SANITIZE_NUMBER_INT);
-            $checkedOut = filter_input(INPUT_POST, 'add-checked-out');
-            $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by');
-            $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
+            $sql = 'UPDATE '. $company . ' SET
+                item_name = :name,
+                item_quantity = :quantity,
+                item_checked_out = :checkedOut,
+                item_checked_out_by = :checkedOutBy,
+                item_description = :description
+                WHERE item_id = :id';
 
+                $stmt = $db->prepare($sql);
+                $stmt->bindValue(':name', $name);
+                $stmt->bindValue(':description', $description);
+                $stmt->bindValue(':quantity', $quantity);
+                $stmt->bindValue(':checkedOut', $checkedOut);
+                $stmt->bindValue(':checkedOutBy', $checkedOutBy);
+                $stmt->bindValue(':id', $id);
+                $stmt->execute();
         }
-
 
         $_SESSION['results'] = 'Data Updated: Select a table';
         include 'home.php';
