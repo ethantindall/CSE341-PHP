@@ -61,6 +61,7 @@ $_SESSION['results'] = '';
         echo $row['name'];
         $company = 'strata';
         $stickerId = $row['item_sticker_id'];
+        echo $stickerId;
         $name = $row['item_name'];
         $quantity = $row['item_quantity'];
         $checkedOut = $row['item_checked_out'];
