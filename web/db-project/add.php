@@ -61,7 +61,7 @@ session_start();
                     Quantity: <input required type="number" min="0" max="100" name="add-quantity"><br>
                     Owner: <input type="text" name="owner" id="owner"><br>
                     Checked Out:  <input required type="radio" name="add-checked-out" onclick="checkDisable(0)" value="TRUE">True</input>
-                                  <input required type="radio" name="add-checked-out" onclick="checkDisable(1)" value="FALSE">False</input><br>
+                                  <input required type="radio" name="add-checked-out" onclick="checkDisable(1)" value="FALSE">False</input><br><br>
                         Checked Out By:  <select id="add-checkout-by" name="add-checkout-by">
                                             <option value="NULL" selected disabled hidden>Select an Option</option> 
                                             <option value="1">Ethan</option>
