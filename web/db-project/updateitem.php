@@ -84,7 +84,7 @@ session_start();
             }
 
             function when(x) {
-                if (x == 0) {document.getElementById('add-sticker').disabled= false;}
+                if (x == 0) {document.getElementById('add-sticker').disabled= false; document.getElementById('owner').disabled = true;}
                 if (x == 1) {document.getElementById('add-sticker').disabled= true;
                             document.getElementById('add-sticker').value = "";}
             }

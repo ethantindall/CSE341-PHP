@@ -147,7 +147,7 @@ function addToDatabase($company, $stickerId, $name, $quantity, $owner, $checkedO
         $db = connectToDB(); 
     
         $sql = "INSERT INTO spectraInventory (item_name, item_description, item_quantity, item_storage_location, item_owner, item_checked_out, item_checked_out_by) 
-                VALUES (:iname, :idesc, :quantity, :owner, 'Company', :icheck, :checkby)";
+                VALUES (:iname, :idesc, :quantity, 1, :owner, :icheck, :checkby)";
     
     
         $stmt = $db->prepare($sql);

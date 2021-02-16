@@ -75,12 +75,13 @@ $_SESSION['results'] = '';
         $stickerId = filter_input(INPUT_POST, 'add-sticker', FILTER_SANITIZE_NUMBER_INT);
         $name = filter_input(INPUT_POST, 'add-name', FILTER_SANITIZE_STRING);
         $quantity = filter_input(INPUT_POST, 'add-quantity', FILTER_SANITIZE_NUMBER_INT);
+        $owner = filter_input(INPUT_POST, 'owner', FILTER_SANITIZE_STRING);
         $checkedOut = filter_input(INPUT_POST, 'add-checked-out');
         $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by');
         $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
 
 
-        addToDatabase($company, $stickerId, $name, $quantity, $checkedOut, $checkedOutBy, $description);
+        addToDatabase($company, $stickerId, $name, $quantity, $owner, $checkedOut, $checkedOutBy, $description);
 
         $_SESSION['results'] = searchresults($company, '');
 
