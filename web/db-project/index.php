@@ -57,7 +57,7 @@ $_SESSION['results'] = '';
     case 'requestUpdateStrata':
         $item = $_GET['item'];
 
-        getStrataUpdateInfo($item);
+        $row = getStrataUpdateInfo($item);
         echo $row['name'];
         $company = 'strata';
         $stickerId = $row['item_sticker_id'];
