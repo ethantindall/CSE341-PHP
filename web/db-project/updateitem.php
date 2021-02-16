@@ -76,8 +76,9 @@ session_start();
 
         </div>
         <script>
-            console.log(document.getElementById('add-checked-out').value);
-            if (document.getElementById('add-checked-out').value == 'TRUE') {
+            let checkedOutOptions = document.getElementsByName('add-checked-out');
+
+            if (checkedOutOptions[1].checked) {
                 document.getElementById('add-checkout-by').disabled = true;
             }
             function when(x) {
