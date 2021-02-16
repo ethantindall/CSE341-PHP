@@ -17,7 +17,7 @@ $_SESSION['results'] = '';
     case 'update':
         $company = filter_input(INPUT_POST, 'add-company', FILTER_SANITIZE_STRING);
 
-        if($company == 'strata') {
+        if($company == 'strataInventory') {
             $id = filter_input(INPUT_POST, 'item-id', FILTER_SANITIZE_NUMBER_INT);
             $stickerId = filter_input(INPUT_POST, 'add-sticker', FILTER_SANITIZE_NUMBER_INT);
             $name = filter_input(INPUT_POST, 'add-name', FILTER_SANITIZE_STRING);
@@ -26,7 +26,7 @@ $_SESSION['results'] = '';
             $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by');
             $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
 
-            $sql = 'UPDATE '. $company . 'Inventory SET
+            $sql = 'UPDATE '. $company . ' SET
                 item_sticker_id = :sticker,
                 item_name = :name,
                 item_quantity = :quantity,
@@ -37,7 +37,7 @@ $_SESSION['results'] = '';
             echo $sql;
 
         }
-        else if($company == 'spectra') {
+        else if($company == 'spectraInventory') {
             $id = filter_input(INPUT_POST, 'item-id', FILTER_SANITIZE_NUMBER_INT);
             $name = filter_input(INPUT_POST, 'add-name', FILTER_SANITIZE_STRING);
             $quantity = filter_input(INPUT_POST, 'add-quantity', FILTER_SANITIZE_NUMBER_INT);
