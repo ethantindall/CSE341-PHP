@@ -57,16 +57,25 @@ $_SESSION['results'] = '';
     case 'requestUpdate':
         $item = $_GET['item'];
         $company = $_GET['company'];
-
         $row = getUpdateInfo($item, $company);
-        $id = $row['item_id'];
-        $stickerId = $row['item_sticker_id'];
-        $name = $row['item_name'];
-        $quantity = $row['item_quantity'];
-        $checkedOut = $row['item_checked_out'];
-        $checkedOutBy = $row['item_checked_out_by'];
-        $description = $row['item_description'];
 
+        if($company == 'strata') {
+            $id = $row['item_id'];
+            $stickerId = $row['item_sticker_id'];
+            $name = $row['item_name'];
+            $quantity = $row['item_quantity'];
+            $checkedOut = $row['item_checked_out'];
+            $checkedOutBy = $row['item_checked_out_by'];
+            $description = $row['item_description'];
+        }
+        else if($company == 'spectra') {
+            $id = $row['item_id'];
+            $name = $row['item_name'];
+            $quantity = $row['item_quantity'];
+            $checkedOut = $row['item_checked_out'];
+            $checkedOutBy = $row['item_checked_out_by'];
+            $description = $row['item_description'];
+        }
         include 'updateitem.php';
         break;
     case 'deleteStrata':
