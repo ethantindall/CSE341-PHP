@@ -55,8 +55,8 @@ session_start();
                 </div>
                 <div id="addform">
                     Sticker ID: <input type="number" id="add-sticker" name="add-sticker" value="<?php if(isset($stickerId)){ echo $stickerId;} ?>"><br>
-                    Name: <input required type="text" name="add-name"><br>
-                    Quantity: <input required type="number" min="0" max="100" name="add-quantity"><br>
+                    Name: <input required type="text" name="add-name" value="<?php if(isset($name)){ echo $name;} ?>"><br>
+                    Quantity: <input required type="number" min="0" max="100" name="add-quantity" value="<?php if(isset($quantity)){ echo $quantity;} ?>"><br>
                     Checked Out:  <input required type="radio" name="add-checked-out" onclick="checkDisable(0)" value="TRUE">True</input>
                                   <input required type="radio" name="add-checked-out" onclick="checkDisable(1)" value="FALSE">False</input><br>
                         Checked Out By:  <select id="add-checkout-by" name="add-checkout-by">
@@ -65,7 +65,7 @@ session_start();
                                             <option value="2">James</option>
                                             <option value="3">Steve</option>
                                         </select><br>
-                        Description: <textarea required name="add-description"></textarea>
+                        Description: <textarea required name="add-description" value="<?php if(isset($description)){ echo $description;} ?>"></textarea>
 
                 </div>
 
