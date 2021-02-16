@@ -83,7 +83,7 @@ session_start();
             }
 
             let companyOptions = document.getElementsByName("add-company");
-            if (checkedOutOptions[0].checked) {
+            if (checkedOutOptions[1].checked) {
                 document.getElementById('add-sticker').disabled = true;
             }
 
