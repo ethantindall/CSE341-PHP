@@ -76,6 +76,9 @@ session_start();
 
         </div>
         <script>   
+            if (document.getElementById('add-checked-out').value == 'TRUE') {
+                document.getElementById('add-checkout-by').disabled = true;
+            }
             function when(x) {
                 if (x == 0) {document.getElementById('add-sticker').disabled= false;}
                 if (x == 1) {document.getElementById('add-sticker').disabled= true;
