@@ -47,7 +47,7 @@ session_start();
                     Name: <input required type="text" name="add-name" value="<?php if(isset($name)){ echo $name;} ?>"><br>
                     Quantity: <input required type="number" min="0" max="100" name="add-quantity" value="<?php if(isset($quantity)){ echo $quantity;} ?>"><br>
                     Checked Out:  <input required type="radio" name="add-checked-out" onclick="checkDisable(0)" <?php if(isset($checkedOut) && $checkedOut == 'TRUE'){ echo 'checked';} ?> value="TRUE">True</input>
-                                  <input required type="radio" name="add-checked-out" onclick="checkDisable(1)" <?php if(isset($checkedOut) && $checkedOut == 'FALSE'){ echo 'checked';} ?> value="FALSE">False</input><br>
+                                  <input required type="radio" name="add-checked-out" onclick="checkDisable(1)" <?php if(!isset($checkedOut)){ echo 'checked';} ?> value="FALSE">False</input><br>
                         Checked Out By:  <select id="add-checkout-by" name="add-checkout-by">
                                             <option value="NULL" <?php if(!isset($checkedOutBy)) {echo 'selected';} ?> disabled hidden>Select an Option</option> 
                                             <option value="1" <?php if(isset($checkedOutBy) && $checkedOutBy == 'Ethan') {echo 'selected';} ?>>Ethan</option>
