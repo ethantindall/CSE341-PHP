@@ -69,6 +69,8 @@ $_SESSION['results'] = '';
             $description = $row['item_description'];
         }
         else if($company == 'spectra') {
+            echo $company;
+            echo $checkedOut;
             $id = $row['item_id'];
             $name = $row['item_name'];
             $quantity = $row['item_quantity'];
