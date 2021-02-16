@@ -46,8 +46,8 @@ session_start();
                     Sticker ID: <input type="number" id="add-sticker" name="add-sticker" value="<?php if(isset($stickerId)){ echo $stickerId;} ?>"><br>
                     Name: <input required type="text" name="add-name" value="<?php if(isset($name)){ echo $name;} ?>"><br>
                     Quantity: <input required type="number" min="0" max="100" name="add-quantity" value="<?php if(isset($quantity)){ echo $quantity;} ?>"><br>
-                    Checked Out:  <input required type="radio" name="add-checked-out" onclick="checkDisable(0)" <?php if(isset($checkedOut) && $checkedOut == 'TRUE'){ echo 'checked';} ?> value="TRUE">True</input>
-                                  <input required type="radio" name="add-checked-out" onclick="checkDisable(1)" <?php if(!isset($checkedOut)){ echo 'checked';} ?> value="FALSE">False</input><br>
+                    Checked Out:  <input required type="radio" name="add-checked-out" onclick="checkDisable(0)" <?php if(isset($checkedOut) && $checkedOut){ echo 'checked';} ?> value="TRUE">True</input>
+                                  <input required type="radio" name="add-checked-out" onclick="checkDisable(1)" <?php if(isset($checkedOut) && !$checkedOut){ echo 'checked';} ?> value="FALSE">False</input><br>
                         Checked Out By:  <select id="add-checkout-by" name="add-checkout-by">
                                             <option value="NULL" <?php if(!isset($checkedOutBy)) {echo 'selected';} ?> disabled hidden>Select an Option</option> 
                                             <option value="1" <?php if(isset($checkedOutBy) && $checkedOutBy == 'Ethan') {echo 'selected';} ?>>Ethan</option>
