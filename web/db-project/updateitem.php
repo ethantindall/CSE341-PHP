@@ -65,7 +65,7 @@ session_start();
                                             <option value="2">James</option>
                                             <option value="3">Steve</option>
                                         </select><br>
-                        Description: <textarea required name="add-description" value="<?php if(isset($description)){ echo $description;} ?>"></textarea>
+                        Description: <textarea required name="add-description"><?php if(isset($description)){ echo $description;} ?></textarea>
 
                 </div>
 
