@@ -43,7 +43,38 @@ session_start();
     </header>
         <main>
         <?php if (isset($_SESSION['message'])) { echo $_SESSION['message']; } ?> 
-        <div id="addInfo">
+        <div id="updateInfo">
+
+        <form method="post" action="/db-project/index.php">
+            <h3>Update Database Info</h3>
+
+            <label>Select company: </label>
+                <div>
+                    <input type="radio" required name="add-company" value="strataInventory" onclick="when(0)">Strata</input>
+                    <input type="radio" required name="add-company" value="spectraInventory" onclick="when(1)">Spectra</input>
+                </div>
+                <div id="addform">
+                    Sticker ID: <input type="number" id="add-sticker" name="add-sticker"><br>
+                    Name: <input required type="text" name="add-name"><br>
+                    Quantity: <input required type="number" min="0" max="100" name="add-quantity"><br>
+                    Checked Out:  <input required type="radio" name="add-checked-out" onclick="checkDisable(0)" value="TRUE">True</input>
+                                  <input required type="radio" name="add-checked-out" onclick="checkDisable(1)" value="FALSE">False</input><br>
+                        Checked Out By:  <select id="add-checkout-by" name="add-checkout-by">
+                                            <option value="NULL" selected disabled hidden>Select an Option</option> 
+                                            <option value="1">Ethan</option>
+                                            <option value="2">James</option>
+                                            <option value="3">Steve</option>
+                                        </select><br>
+                        Description: <textarea required name="add-description"></textarea>
+
+                </div>
+
+
+                <input id="search" type="submit" value="Add to DB">
+                <input type="hidden" name="action" value="update">
+
+            </form>
+
             <form method="post" action="/db-project/index.php">
             <h3>Delete This Entry?</h3>
 
