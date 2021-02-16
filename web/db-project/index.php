@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require 'updatefunctions.php';
+require 'connect.php';
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     if ($action == NULL){
@@ -40,14 +40,14 @@ $_SESSION['results'] = '';
 
         include 'home.php';
         break;
-    case 'pullStrataItem':
+    case 'requestUpdateStrata':
         $item = $_GET['item'];
 
         //getStrataUpdateInfo($item);
 
         include 'updateitem.php';
         break;
-    case 'pullSpectraItem':
+    case 'requestUpdateSpectra':
         $item = $_GET['item'];
         //getSpectraUpdateInfo($item);
 
