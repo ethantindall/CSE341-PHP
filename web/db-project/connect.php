@@ -94,6 +94,8 @@ function searchresults($company, $textinput) {
                     <th>Owner</th>
                     <th>Checked Out</th>
                     <th>Checked Out By</th>
+                    <th></th>
+                    <th></th>
                 </tr>';
 
         foreach ($db->query($dbquery) as $row) {
