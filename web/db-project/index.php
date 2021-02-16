@@ -70,11 +70,11 @@ $_SESSION['results'] = '';
         }
         else if($company == 'spectra') {
             echo $company;
-            echo $checkedOut;
             $id = $row['item_id'];
             $name = $row['item_name'];
             $quantity = $row['item_quantity'];
             $checkedOut = $row['item_checked_out'];
+            echo $checkedOut;
             $checkedOutBy = $row['item_checked_out_by'];
             $description = $row['item_description'];
         }
