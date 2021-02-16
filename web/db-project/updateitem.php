@@ -59,19 +59,11 @@ session_start();
                 </div>
 
                 <input type="hidden" name="item-id" value="<?php echo $id; ?>">
-                <input id="search" type="submit" value="Add to DB">
+                <input id="search" type="submit" value="Update Entry">
                 <input type="hidden" name="action" value="update">
 
             </form>
 
-            <form method="post" action="/db-project/index.php">
-            <h3>Delete This Entry?</h3>
-
-
-                <input id="search" type="submit" value="Delete From DB">
-                <input type="hidden" name="action" value="delete">
-
-            </form>
             <a href="/db-project/index.php"><button>Return to Home</button></a>
 
         </div>
@@ -85,6 +77,10 @@ session_start();
             let companyOptions = document.getElementsByName("add-company");
             if (checkedOutOptions[1].checked) {
                 document.getElementById('add-sticker').disabled = true;
+                checkedOutOptions[0].disabled = true;
+            }
+            else if (checkedOutOptions[0].checked) {
+                checkedOutOptions[1].disabled = true;
             }
 
             function when(x) {

@@ -63,6 +63,8 @@ function searchresults($company, $textinput) {
                     <th>Quantity</th>
                     <th>Checked Out</th>
                     <th>Checked Out By</th>
+                    <th></th>
+                    <th></th>
                 </tr>';
         foreach ($db->query($dbquery) as $row) {
             $boolcheckedout = truefalse($row['item_checked_out']);

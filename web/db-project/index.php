@@ -16,16 +16,39 @@ $_SESSION['results'] = '';
         break;
     case 'update':
         $company = filter_input(INPUT_POST, 'add-company', FILTER_SANITIZE_STRING);
-        $stickerId = filter_input(INPUT_POST, 'add-sticker', FILTER_SANITIZE_NUMBER_INT);
-        $name = filter_input(INPUT_POST, 'add-name', FILTER_SANITIZE_STRING);
-        $quantity = filter_input(INPUT_POST, 'add-quantity', FILTER_SANITIZE_NUMBER_INT);
-        $checkedOut = filter_input(INPUT_POST, 'add-checked-out');
-        $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by');
-        $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
+
+        if($company == 'strata') {
+            $id = filter_input(INPUT_POST, 'item-id', FILTER_SANITIZE_NUMBER_INT);
+            $stickerId = filter_input(INPUT_POST, 'add-sticker', FILTER_SANITIZE_NUMBER_INT);
+            $name = filter_input(INPUT_POST, 'add-name', FILTER_SANITIZE_STRING);
+            $quantity = filter_input(INPUT_POST, 'add-quantity', FILTER_SANITIZE_NUMBER_INT);
+            $checkedOut = filter_input(INPUT_POST, 'add-checked-out');
+            $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by');
+            $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
+
+            $sql = 'UPDATE '. $company . 'Inventory SET
+                item_sticker_id = :sticker,
+                item_name = :name,
+                item_quantity = :quantity,
+                item_checked_out = :checkedOut,
+                item_checked_out_by = :checkedOutBy,
+                item_description = :description
+                WHERE item_id = :id';
+            echo $sql;
+
+        }
+        else if($company == 'spectra') {
+            $id = filter_input(INPUT_POST, 'item-id', FILTER_SANITIZE_NUMBER_INT);
+            $name = filter_input(INPUT_POST, 'add-name', FILTER_SANITIZE_STRING);
+            $quantity = filter_input(INPUT_POST, 'add-quantity', FILTER_SANITIZE_NUMBER_INT);
+            $checkedOut = filter_input(INPUT_POST, 'add-checked-out');
+            $checkedOutBy = filter_input(INPUT_POST, 'add-checkout-by');
+            $description = filter_input(INPUT_POST, 'add-description', FILTER_SANITIZE_STRING);
+
+        }
+
 
         $_SESSION['results'] = 'Data Updated: Select a table';
-
-
         include 'home.php';
         break;
     case 'addToDatabase':
