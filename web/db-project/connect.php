@@ -195,11 +195,10 @@ function getStrataUpdateInfo($item) {
     try {
         $db = connectToDB();
     
-        $sql= 'SELECT * FROM strataInventory where item_id = :item';
-       
+        $sql= 'SELECT * FROM strataInventory where item_id = ' . $item;
+        echo $item;
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':item', $item);
-        echo $stmt;
         foreach ($db->query($stmt) as $row) {
             return $row;
         }
