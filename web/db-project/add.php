@@ -19,10 +19,11 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
     <script>
         function when(x) {
-            if (x == 0) {document.getElementById('add-sticker').disabled= false; document.getElementById('owner').disabled = true;}
+            if (x == 0) {document.getElementById('add-sticker').disabled= false;
+                        document.getElementById('owner').disabled = true;
+                        document.getElementById('owner').value = "";}
             if (x == 1) {document.getElementById('add-sticker').disabled= true;
                         document.getElementById('owner').disabled = false;
-                        document.getElementById('owner').value = "";
                          document.getElementById('add-sticker').value = "";}
         }
         function checkDisable(x){
