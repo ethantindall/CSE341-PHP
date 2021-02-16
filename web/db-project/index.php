@@ -126,12 +126,16 @@ $_SESSION['results'] = '';
         $item = $_GET['item'];
 
         deleteStrata($item);
+        $_SESSION['results'] = searchresults('strataInventory', '');
+
         include 'home.php';
         break;
     case 'deleteSpectra':
         $item = $_GET['item'];
 
         deleteSpectra($item);
+        $_SESSION['results'] = searchresults('spectraInventory', '');
+
         include 'home.php';
         break;
     default:
