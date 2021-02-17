@@ -23,12 +23,26 @@ switch ($action){
         include 'views/insert.php';
         break;
     case 'addToDatabase':
-        $_SESSION['book'] = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
-        $_SESSION['chapter'] = filter_input(INPUT_POST, 'chapter', FILTER_VALIDATE_INT);
-        $_SESSION['verse'] = filter_input(INPUT_POST, 'verse', FILTER_VALIDATE_INT);
-        $_SESSION['content'] = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
+        $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
+        $chapter = filter_input(INPUT_POST, 'chapter', FILTER_VALIDATE_INT);
+        $verse = filter_input(INPUT_POST, 'verse', FILTER_VALIDATE_INT);
+        $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
 
-        echo $_SESSION['book'];
+            $db = connect_to_db(); 
+        
+            $sql = 'INSERT INTO scriptures (book, chapter, verse, content) 
+                    VALUES (:book, :chapter, :verse, :content)';
+        
+        
+            $stmt = $db->prepare($sql);
+        
+            //$stmt->bindValue(':com', $company);
+            $stmt->bindValue(':book', $book);
+            $stmt->bindValue(':chapter', $chapter);
+            $stmt->bindValue(':verse', $verse);
+            $stmt->bindValue(':content', $content);      
+            
+            $stmt->execute();
         
         include 'views/homepage.php';
         break;
