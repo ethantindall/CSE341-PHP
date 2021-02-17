@@ -19,10 +19,7 @@ require 'connect.php';
     <a href="/wk5-team/index.php/?action=search"><button>Search</button></a></br>
 </header>
 
-<?php 
-
-
-?>
+<?php echo $output; ?>
 
 </body>
 </html>
