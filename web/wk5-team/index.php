@@ -44,6 +44,16 @@ switch ($action){
             
             $stmt->execute();
         
+            $output = '';
+            try {
+                $db = connect_to_db();
+                foreach ($db->query('SELECT * FROM scriptures') as $row) {
+                    $output .= '<a href="content.php/?id=' . $row['id'] . '">Scripture:</a> ' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
+                }
+            } catch (PDOException $e) {
+                echo 'Error!: Promote the Gold Database';
+                die();
+            }
         include 'views/homepage.php';
         break;
     case 'search':
