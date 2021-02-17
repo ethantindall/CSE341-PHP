@@ -8,6 +8,12 @@
 
 </head>
 <body>
+<h1>SCRIPTURE INSERT</h1>
+    <a href="/wk5-team/index.php"><button>Home</button></a>
+    <a href="/wk5-team/index.php/?action=insertForm"><button>Input</button></a>
+    <a href="/wk5-team/index.php/?action=search"><button>Search</button></a></br>
+</header>
+
     <form method="POST" action="/wk5-team/index.php">
         Book: <input type="text" name="book" id="book">
         Chapter: <input type="text" name="chapter" id="chapter">

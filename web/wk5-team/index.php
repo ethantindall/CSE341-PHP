@@ -17,10 +17,10 @@ switch ($action){
         $_SESSION['verse'] = filter_input(INPUT_GET, 'verse', FILTER_VALIDATE_INT);
         $_SESSION['content'] = filter_input(INPUT_GET, 'content', FILTER_SANITIZE_STRING);
 
-        include 'results.php';
+        include 'views/results.php';
         break;
     case 'insertForm':
-        include 'insert.php';
+        include 'views/insert.php';
         break;
     case 'addToDatabase':
 
@@ -31,13 +31,13 @@ switch ($action){
 
         echo $_SESSION['book'];
         
-        include 'addresults.php';
+        include 'views/addresults.php';
         break;
     case 'search':
-        include 'search.php';
+        include 'views/search.php';
         break;
     default:
-        include 'homepage.php';
+        include 'views/homepage.php';
         break;
     }
 
