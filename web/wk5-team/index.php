@@ -39,8 +39,8 @@ switch ($action){
         $output = '';
         try {
             $db = connect_to_db();
-            foreach ($db->query('SELECT id, book, chapter, verse, content FROM scriptures') as $row) {
-                $output .= '<a href="content.php/?id='. $row['id'] .'">Scripture:</a> ' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
+            foreach ($db->query('SELECT * FROM scriptures') as $row) {
+                $output .= '<a href="content.php/?id=' . $row['id'] . '">Scripture:</a> ' . $row['book'] .' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>';
             }
         } catch (PDOException $e) {
             echo 'Error!: Promote the Gold Database';
