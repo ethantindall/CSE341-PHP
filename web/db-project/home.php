@@ -36,8 +36,8 @@ session_start();
         </form>
         
         <div id="add">
-            <a href="index.php/?action=add"><button>Add Data to Database</button></a>
-            <a href="../index.php"><button>Return to Class Home</button></a>
+        <button><a href="index.php/?action=add">Add Data to Database</a></button>
+        <button><a href="../index.php"><button>Return to Class Home</a></button>
 
         </div>
 
