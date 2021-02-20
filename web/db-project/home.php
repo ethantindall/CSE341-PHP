@@ -37,7 +37,7 @@ session_start();
         
         <div id="add">
         <button><a href="index.php/?action=add">Add Data to Database</a></button>
-        <button><a href="../index.php"><button>Return to Class Home</a></button>
+        <button><a href="../index.php">Return to Class Home</a></button>
 
         </div>
 
