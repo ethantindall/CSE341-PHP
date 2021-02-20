@@ -17,6 +17,7 @@
     <form method="POST" action="index.php">
         Search by book: <input type="text" name="book_name" id="book">
         <input type="submit" name="submit" id="submit" value="Submit">
+        <input type="hidden" name="action" value="completeSearch">
 
     </form>
 </body>

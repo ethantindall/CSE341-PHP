@@ -59,6 +59,9 @@ switch ($action){
     case 'search':
         include 'views/search.php';
         break;
+    case 'completeSearch':
+        include 'views/search.php';
+        break;
     default:
         $output = '';
         try {
