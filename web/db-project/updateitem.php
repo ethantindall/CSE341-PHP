@@ -64,7 +64,7 @@ session_start();
 
             </form>
 
-            <a href="/db-project/index.php"><button>Return to Home</button></a>
+            <button><a href="/db-project/index.php">Return to Home</a></button>
 
         </div>
         <script>
