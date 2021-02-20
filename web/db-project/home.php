@@ -24,11 +24,11 @@ session_start();
         <form method="POST" action="index.php">
             <div>
                 <label>Select company: </label>
-                <input type="radio" name="sCompany" value="strata"  <?php if (isset($_POST['company']) && $_POST['company'] == 'strata') {echo 'checked="checked" ';} ?>>Strata</input>
+                <input type="radio" selected name="sCompany" value="strata"  <?php if (isset($_POST['company']) && $_POST['company'] == 'strata') {echo 'checked="checked" ';} ?>>Strata</input>
                 <input type="radio" name="sCompany" value="spectra" <?php if (isset($_POST['company']) && $_POST['company'] == 'spectra') {echo 'checked="checked" ';} ?>>Spectra</input>
             </div>
             
-            <label>Search By Name:</label>
+            <label>Search By Name: (Optional)</label>
             <input type="text" name="searchParameters">
             <input id="search" type="submit" value="Search">
             <input type="hidden" name="action" value="search">
