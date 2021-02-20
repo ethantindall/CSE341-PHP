@@ -77,7 +77,7 @@ session_start();
                 <input type="hidden" name="action" value="addToDatabase">
 
             </form>
-            <a href="/db-project/index.php"><button>Return to Home</button></a>
+            <button><a href="/db-project/index.php">Return to Home</a></button>
 
         </div>
 
