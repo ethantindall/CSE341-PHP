@@ -140,6 +140,7 @@ $_SESSION['results'] = '';
         include 'home.php';
         break;
     default:
+        $_SESSION['results'] = 'Select a table and click SEARCH.';
         include 'home.php';
         break;
     }
