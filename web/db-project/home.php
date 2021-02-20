@@ -24,7 +24,7 @@ session_start();
         <form method="POST" action="index.php">
             <div>
                 <label>Select company: </label>
-                <input type="radio" checked="checked" name="sCompany" value="strata"  <?php if (isset($_POST['company']) && $_POST['company'] == 'strata') {echo 'checked="checked" ';} ?>>Strata</input>
+                <input type="radio" name="sCompany" value="strata"  <?php if (isset($_POST['company']) && $_POST['company'] == 'strata') {echo 'checked="checked" ';} ?>>Strata</input>
                 <input type="radio" name="sCompany" value="spectra" <?php if (isset($_POST['company']) && $_POST['company'] == 'spectra') {echo 'checked="checked" ';} ?>>Spectra</input>
             </div>
             

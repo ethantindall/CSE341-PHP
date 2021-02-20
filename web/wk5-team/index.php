@@ -63,7 +63,7 @@ switch ($action){
         include 'views/search.php';
         break;
     default:
-        $output = '';
+        $output = 'SELECT A TABLE';
         try {
             $db = connect_to_db();
             foreach ($db->query('SELECT * FROM scriptures') as $row) {
